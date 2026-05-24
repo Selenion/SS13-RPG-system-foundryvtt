@@ -1,0 +1,42 @@
+<form class="ss13-sheet">
+  <header>
+    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+    <div class="stats">
+      <div class="resources">
+        <label>HP: <input name="system.resources.hp.value" type="number" value="{{system.resources.hp.value}}"/></label>
+        <label>Stress: <input name="system.resources.stress.value" type="number" value="{{system.resources.stress.value}}"/></label>
+      </div>
+      <div class="attributes">
+        {{#each system.attributes as |attr key|}}
+        <div class="attr">
+          <label>{{attr.label}}</label>
+          <input name="system.attributes.{{key}}.value" type="number" value="{{attr.value}}"/>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </header>
+  <section class="saves">
+    <h3>Saves</h3>
+    {{#each system.saves as |save key|}}
+    <button type="button" class="save-roll" data-save="{{key}}">{{save.label}}: {{save.value}}</button>
+    {{/each}}
+  </section>
+  <section class="skills">
+    <h3>Skills</h3>
+    {{#each system.skills as |skill key|}}
+    <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}}: {{skill.value}}</button>
+    {{/each}}
+  </section>
+  <section class="inventory">
+    <h3>Inventory</h3>
+    <div class="slots">
+      {{#each system.inventory.slots as |slot itemId key|}}
+      <div class="slot {{key}}">
+        <label>{{key}}</label>
+        <span>{{itemId}}</span>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+</form>

@@ -1,0 +1,19 @@
+<form class="ss13-item">
+  <header>
+    <h1><input name="name" type="text" value="{{item.name}}" placeholder="Item Name"/></h1>
+    <img src="{{item.img}}" data-edit="img"/>
+  </header>
+  <section class="item-type">
+    <label>Type: {{item.type}}</label>
+  </section>
+  {{#if system.damage}}
+  <section class="damage">
+    <label>Damage: {{system.damage}}</label>
+  </section>
+  {{/if}}
+  {{#if system.slot}}
+  <section class="slot">
+    <label>Slot: {{system.slot}}</label>
+  </section>
+  {{/if}}
+</form>

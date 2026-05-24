@@ -1,0 +1,112 @@
+:root {
+  --ss13-dark: #262626;
+  --ss13-section: rgba(0, 0, 0, 0.33);
+  --ss13-red: #d92626;
+  --ss13-orange: #f26c0d;
+  --ss13-green: #1fad4e;
+  --ss13-blue: #2a79c8;
+  --ss13-text: #fff;
+}
+
+.ss13-sheet {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--ss13-dark);
+  color: var(--ss13-text);
+  padding: 10px;
+}
+
+.ss13-sheet header {
+  border-bottom: 2px solid var(--ss13-red);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.ss13-sheet h1, .ss13-sheet h2, .ss13-sheet h3 {
+  color: var(--ss13-red);
+  margin: 5px 0;
+}
+
+.ss13-sheet .stats {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.ss13-sheet .resources {
+  display: flex;
+  gap: 15px;
+}
+
+.ss13-sheet .resources label {
+  background: var(--ss13-section);
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.ss13-sheet .attributes {
+  display: flex;
+  gap: 10px;
+}
+
+.ss13-sheet .attr {
+  text-align: center;
+  background: var(--ss13-section);
+  padding: 5px;
+  border-radius: 3px;
+  min-width: 50px;
+}
+
+.ss13-sheet .attr label {
+  display: block;
+  font-weight: bold;
+  color: var(--ss13-orange);
+}
+
+.ss13-sheet input[type="number"] {
+  width: 50px;
+  background: var(--ss13-dark);
+  color: var(--ss13-text);
+  border: 1px solid var(--ss13-red);
+  text-align: center;
+}
+
+.ss13-sheet .skills, .ss13-sheet .saves {
+  margin-top: 10px;
+}
+
+.ss13-sheet .skills h3, .ss13-sheet .saves h3 {
+  color: var(--ss13-blue);
+}
+
+.ss13-sheet .skill-roll, .save-roll {
+  margin: 2px;
+  padding: 5px 10px;
+  background: var(--ss13-section);
+  color: var(--ss13-text);
+  border: 1px solid var(--ss13-red);
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.ss13-sheet .skill-roll:hover, .save-roll:hover {
+  background: var(--ss13-red);
+  color: var(--ss13-text);
+}
+
+.ss13-sheet .inventory {
+  margin-top: 10px;
+}
+
+.ss13-sheet .slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.ss13-sheet .slot {
+  background: var(--ss13-section);
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+}

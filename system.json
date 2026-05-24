@@ -1,0 +1,35 @@
+{
+  "name": "ss13",
+  "title": "Space Station 13 RPG",
+  "version": "1.0.0",
+  "minimumCoreVersion": "10",
+  "compatibleCoreVersion": "11",
+  "languages": [
+    {
+      "lang": "ru",
+      "name": "Russian",
+      "path": "lang/ru.json"
+    },
+    {
+      "lang": "en",
+      "name": "English", 
+      "path": "lang/en.json"
+    }
+  ],
+  "esmodules": [
+    "module.js"
+  ],
+  "styles": [
+    "styles/ss13.css"
+  ],
+  "packs": [],
+  "socket": false,
+  "manifest": "",
+  "download": "",
+  "changelog": "changelog.html",
+  "library": "libs/",
+  "initiative": "normal",
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primarySetting": "settings"
+}

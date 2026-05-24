@@ -1,0 +1,217 @@
+{
+    "attributes":  {
+                       "str":  {
+                                   "value":  {
+                                                 "type":  "Number",
+                                                 "default":  25
+                                             },
+                                   "label":  "STR"
+                               },
+                       "dex":  {
+                                   "value":  {
+                                                 "type":  "Number",
+                                                 "default":  25
+                                             },
+                                   "label":  "DEX"
+                               },
+                       "int":  {
+                                   "value":  {
+                                                 "type":  "Number",
+                                                 "default":  25
+                                             },
+                                   "label":  "INT"
+                               },
+                       "com":  {
+                                   "value":  {
+                                                 "type":  "Number",
+                                                 "default":  25
+                                             },
+                                   "label":  "COM"
+                               }
+                   },
+    "saves":  {
+                  "san":  {
+                              "value":  {
+                                            "type":  "Number",
+                                            "default":  20
+                                        },
+                              "label":  "SAN"
+                          },
+                  "ftr":  {
+                              "value":  {
+                                            "type":  "Number",
+                                            "default":  20
+                                        },
+                              "label":  "FTR"
+                          },
+                  "phy":  {
+                              "value":  {
+                                            "type":  "Number",
+                                            "default":  20
+                                        },
+                              "label":  "PHY"
+                          }
+              },
+    "resources":  {
+                      "hp":  {
+                                 "value":  {
+                                               "type":  "Number",
+                                               "default":  15
+                                           },
+                                 "max":  {
+                                             "type":  "Number",
+                                             "default":  15
+                                         }
+                             },
+                      "stress":  {
+                                     "value":  {
+                                                   "type":  "Number",
+                                                   "default":  0
+                                               }
+                                 }
+                  },
+    "skills":  {
+                   "melee":  {
+                                 "value":  0,
+                                 "label":  "Melee"
+                             },
+                   "guns":  {
+                                "value":  0,
+                                "label":  "Guns"
+                            },
+                   "engineering":  {
+                                       "value":  0,
+                                       "label":  "Engineering"
+                                   },
+                   "medical":  {
+                                   "value":  0,
+                                   "label":  "Medical"
+                               },
+                   "science":  {
+                                   "value":  0,
+                                   "label":  "Science"
+                               },
+                   "tech":  {
+                                "value":  0,
+                                "label":  "Tech"
+                            },
+                   "intimidate":  {
+                                      "value":  0,
+                                      "label":  "Intimidate"
+                                  },
+                   "persuade":  {
+                                    "value":  0,
+                                    "label":  "Persuade"
+                                },
+                   "sleight":  {
+                                   "value":  0,
+                                   "label":  "Sleight"
+                               },
+                   "atmosphere":  {
+                                      "value":  0,
+                                      "label":  "Atmosphere"
+                                  },
+                   "spacecraft":  {
+                                      "value":  0,
+                                      "label":  "Spacecraft"
+                                  },
+                   "survival":  {
+                                    "value":  0,
+                                    "label":  "Survival"
+                                }
+               },
+    "inventory":  {
+                      "slots":  {
+                                    "uniform":  {
+                                                    "type":  "String",
+                                                    "default":  ""
+                                                },
+                                    "armor":  {
+                                                  "type":  "String",
+                                                  "default":  ""
+                                              },
+                                    "head":  {
+                                                 "type":  "String",
+                                                 "default":  ""
+                                             },
+                                    "belt":  {
+                                                 "type":  "String",
+                                                 "default":  ""
+                                             },
+                                    "back":  {
+                                                 "type":  "String",
+                                                 "default":  ""
+                                             },
+                                    "id":  {
+                                               "type":  "String",
+                                               "default":  ""
+                                           },
+                                    "left_pocket":  {
+                                                        "type":  "String",
+                                                        "default":  ""
+                                                    },
+                                    "right_pocket":  {
+                                                         "type":  "String",
+                                                         "default":  ""
+                                                     },
+                                    "left_hand":  {
+                                                      "type":  "String",
+                                                      "default":  ""
+                                                  },
+                                    "right_hand":  {
+                                                       "type":  "String",
+                                                       "default":  ""
+                                                   },
+                                    "shoes":  {
+                                                  "type":  "String",
+                                                  "default":  ""
+                                              },
+                                    "hands":  {
+                                                  "type":  "String",
+                                                  "default":  ""
+                                              }
+                                },
+                      "protection":  {
+                                         "brute":  {
+                                                       "value":  {
+                                                                     "type":  "Number",
+                                                                     "default":  0
+                                                                 },
+                                                       "max":  {
+                                                                   "type":  "Number",
+                                                                   "default":  0
+                                                               }
+                                                   },
+                                         "burn":  {
+                                                      "value":  {
+                                                                    "type":  "Number",
+                                                                    "default":  0
+                                                                },
+                                                      "max":  {
+                                                                  "type":  "Number",
+                                                                  "default":  0
+                                                              }
+                                                  },
+                                         "toxin":  {
+                                                       "value":  {
+                                                                     "type":  "Number",
+                                                                     "default":  0
+                                                                 },
+                                                       "max":  {
+                                                                   "type":  "Number",
+                                                                   "default":  0
+                                                               }
+                                                   },
+                                         "radiation":  {
+                                                           "value":  {
+                                                                         "type":  "Number",
+                                                                         "default":  0
+                                                                     },
+                                                           "max":  {
+                                                                       "type":  "Number",
+                                                                       "default":  0
+                                                                   }
+                                                       }
+                                     }
+                  }
+}

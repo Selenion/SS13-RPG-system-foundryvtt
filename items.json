@@ -1,0 +1,444 @@
+{
+  "items": [
+    {
+      "id": "taser",
+      "name": "Taser",
+      "type": "weapon",
+      "img": "icons/weapons/clubs/club-hammer.webp",
+      "system": {
+        "type": "range",
+        "damage": "1d10",
+        "damageType": "electro",
+        "range": 10,
+        "ammo": "cells",
+        "shots": 10,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "stun_baton",
+      "name": "Stun Baton",
+      "type": "weapon",
+      "img": "icons/weapons/clubs/club-short.webp",
+      "system": {
+        "type": "melee",
+        "damage": "1d8",
+        "damageType": "electro",
+        "range": 5,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "type": "grenade",
+      "img": "icons/weapons/thrown/bomb.webp",
+      "system": {
+        "effect": "blind",
+        "duration": "1d4",
+        "slot": "left_hand"
+      }
+    },
+    {
+      "id": "handcuffs",
+      "name": "Handcuffs",
+      "type": "tool",
+      "img": "icons/tools/locks/padlock-closed.webp",
+      "system": {
+        "effect": "restrain",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "emag",
+      "name": "Cryptographic Sequencer",
+      "type": "tool",
+      "img": "icons/tools/lockpicks/lockpick-set.webp",
+      "system": {
+        "type": "hack",
+        "uses": 1,
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "energy_sword",
+      "name": "Energy Sword",
+      "type": "weapon",
+      "img": "icons/weapons/swords/sword-energy.webp",
+      "system": {
+        "type": "melee",
+        "damage": "2d10",
+        "damageType": "physical",
+        "reflect": true,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "revolver_357",
+      "name": ".357 Revolver",
+      "type": "weapon",
+      "img": "icons/weapons/guns/gun-revolver.webp",
+      "system": {
+        "type": "range",
+        "damage": "2d10",
+        "damageType": "physical",
+        "range": 20,
+        "ammo": "bullets357",
+        "shots": 7,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "wrench",
+      "name": "Wrench",
+      "type": "tool",
+      "img": "icons/tools/handheld/wrench.webp",
+      "system": {
+        "type": "repair",
+        "skill": "engineering",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "multitool",
+      "name": "Multitool",
+      "type": "tool",
+      "img": "icons/tools/misc/mining-pick.webp",
+      "system": {
+        "type": "universal",
+        "skill": "tech",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "hypospray",
+      "name": "Hypospray",
+      "type": "tool",
+      "img": "icons/medical/bandages/bandage-plain.webp",
+      "system": {
+        "type": "heal",
+        "skill": "medical",
+        "slot": "left_hand"
+      }
+    },
+    {
+      "id": "oxygen_tank",
+      "name": "Oxygen Tank",
+      "type": "equipment",
+      "img": "icons/equipment/chest/cuirass-light.webp",
+      "system": {
+        "type": "oxygen",
+        "amount": 120,
+        "slot": "back"
+      }
+    },
+    {
+      "id": "assistant_uniform",
+      "name": "Assistant Uniform",
+      "type": "equipment",
+      "img": "icons/equipment/chest/shirt-simple-grey.webp",
+      "system": {
+        "type": "uniform",
+        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "slot": "uniform"
+      }
+    },
+    {
+      "id": "security_armor",
+      "name": "Security Armor",
+      "type": "equipment",
+      "img": "icons/equipment/chest/chest-plate.webp",
+      "system": {
+        "type": "armor",
+        "protection": {"brute": 3, "burn": 2, "toxin": 0, "radiation": 0},
+        "slot": "armor"
+      }
+    },
+    {
+      "id": "assistant_id",
+      "name": "Assistant ID",
+      "type": "id",
+      "img": "icons/items/cards/card-blank.webp",
+      "system": {
+        "access": ["common", "service"],
+        "slot": "id"
+      }
+    },
+    {
+      "id": "security_id",
+      "name": "Security ID",
+      "type": "id",
+      "img": "icons/items/cards/card-blank.webp",
+      "system": {
+        "access": ["security", "brig", "armory"],
+        "slot": "id"
+      }
+    },
+    {
+      "id": "captain_id",
+      "name": "Captain ID",
+      "type": "id",
+      "img": "icons/items/cards/card-blank.webp",
+      "system": {
+        "access": ["captain", "command", "all"],
+        "slot": "id"
+      }
+    },
+    {
+      "id": "engineer_uniform",
+      "name": "Engineer Uniform",
+      "type": "equipment",
+      "img": "icons/equipment/chest/shirt-simple-orange.webp",
+      "system": {
+        "type": "uniform",
+        "protection": {"brute": 1, "burn": 1, "toxin": 0, "radiation": 0},
+        "slot": "uniform"
+      }
+    },
+    {
+      "id": "medical_uniform",
+      "name": "Medical Uniform",
+      "type": "equipment",
+      "img": "icons/equipment/chest/shirt-simple-teal.webp",
+      "system": {
+        "type": "uniform",
+        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "slot": "uniform"
+      }
+    },
+    {
+      "id": "research_uniform",
+      "name": "Research Uniform",
+      "type": "equipment",
+      "img": "icons/equipment/chest/shirt-simple-purple.webp",
+      "system": {
+        "type": "uniform",
+        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "slot": "uniform"
+      }
+    },
+    {
+      "id": "security_helmet",
+      "name": "Security Helmet",
+      "type": "equipment",
+      "img": "icons/equipment/head/hat-helmet.webp",
+      "system": {
+        "type": "head",
+        "protection": {"brute": 2, "burn": 1, "toxin": 0, "radiation": 0},
+        "slot": "head"
+      }
+    },
+    {
+      "id": "security_gloves",
+      "name": "Security Gloves",
+      "type": "equipment",
+      "img": "icons/equipment/hands/gloves-fingerless.webp",
+      "system": {
+        "type": "hands",
+        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "slot": "hands"
+      }
+    },
+    {
+      "id": "engineer_boots",
+      "name": "Engineer Boots",
+      "type": "equipment",
+      "img": "icons/equipment/feet/shoes-boots.webp",
+      "system": {
+        "type": "shoes",
+        "protection": {"brute": 2, "burn": 1, "toxin": 0, "radiation": 0},
+        "slot": "shoes"
+      }
+    },
+    {
+      "id": "medical_boots",
+      "name": "Medical Boots",
+      "type": "equipment",
+      "img": "icons/equipment/feet/shoes-sneakers-blue.webp",
+      "system": {
+        "type": "shoes",
+        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "slot": "shoes"
+      }
+    },
+    {
+      "id": "health_analyzer",
+      "name": "Health Analyzer",
+      "type": "tool",
+      "img": "icons/tools/misc/scanner.webp",
+      "system": {
+        "type": "diagnose",
+        "skill": "medical",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "medical_kit",
+      "name": "Medical Kit",
+      "type": "tool",
+      "img": "icons/medical/bandages/bandage-plain.webp",
+      "system": {
+        "type": "heal",
+        "skill": "medical",
+        "uses": 5,
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "cable_coil",
+      "name": "Cable Coil",
+      "type": "tool",
+      "img": "icons/tools/electronics/cable.webp",
+      "system": {
+        "type": "repair",
+        "skill": "engineering",
+        "amount": 30,
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "power_cell",
+      "name": "Power Cell",
+      "type": "equipment",
+      "img": "icons/equipment/misc/battery.webp",
+      "system": {
+        "type": "battery",
+        "charge": 100,
+        "slot": "right_pocket"
+      }
+    },
+    {
+      "id": "mop",
+      "name": "Mop",
+      "type": "tool",
+      "img": "icons/tools/misc/mop.webp",
+      "system": {
+        "type": "clean",
+        "skill": "civilian",
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "chef_knife",
+      "name": "Chef Knife",
+      "type": "weapon",
+      "img": "icons/weapons/kitchen/knife-food.webp",
+      "system": {
+        "type": "melee",
+        "damage": "1d6",
+        "damageType": "physical",
+        "slot": "right_hand"
+      }
+    },
+{
+      "id": "pda",
+      "name": "PDA",
+      "type": "tool",
+      "img": "icons/items/tools/radio.webp",
+      "system": {
+        "type": "pda",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "disabler",
+      "name": "Disabler",
+      "type": "weapon",
+      "img": "icons/weapons/guns/gun-energy-pistol.webp",
+      "system": {
+        "type": "range",
+        "damage": "1d8+1",
+        "damageType": "electro",
+        "range": 15,
+        "ammo": "cells",
+        "shots": 5,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "laser_gun",
+      "name": "Laser Gun",
+      "type": "weapon",
+      "img": "icons/weapons/guns/gun-energy-rifle.webp",
+      "system": {
+        "type": "range",
+        "damage": "2d8",
+        "damageType": "burn",
+        "range": 25,
+        "ammo": "cells",
+        "shots": 30,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "shotgun",
+      "name": "Shotgun",
+      "type": "weapon",
+      "img": "icons/weapons/guns/gun-shotgun.webp",
+      "system": {
+        "type": "range",
+        "damage": "3d10",
+        "damageType": "physical",
+        "range": 15,
+        "ammo": "shells",
+        "shots": 8,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "ammo_357",
+      "name": ".357 Ammo",
+      "type": "ammo",
+      "img": "icons/items/bullets/bullets-box.webp",
+      "system": {
+        "type": "bullets357",
+        "amount": 7,
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "ammo_shells",
+      "name": "Shotgun Shells",
+      "type": "ammo",
+      "img": "icons/items/bullets/bullets-box.webp",
+      "system": {
+        "type": "shells",
+        "amount": 8,
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "energy_cells",
+      "name": "Energy Cells",
+      "type": "ammo",
+      "img": "icons/items/bullets/cell.webp",
+      "system": {
+        "type": "cells",
+        "amount": 10,
+        "slot": "right_pocket"
+      }
+    },
+    {
+      "id": "radio_headset",
+      "name": "Radio Headset",
+      "type": "equipment",
+      "img": "icons/items/tools/radio.webp",
+      "system": {
+        "type": "radio",
+        "channel": "common",
+        "slot": "ears"
+      }
+    },
+    {
+      "id": "secrecy_briefcase",
+      "name": "Secretary Briefcase",
+      "type": "equipment",
+      "img": "icons/equipment/back/backpack.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 15,
+        "slot": "back"
+      }
+    }
+  ]
+}
