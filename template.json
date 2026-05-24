@@ -3,435 +3,107 @@
     "types": ["character", "npc"],
     "character": {
       "attributes": {
-        "str": {
-          "value": {
-            "type": "Number",
-            "default": 25
-          },
-          "label": "STR"
-        },
-        "dex": {
-          "value": {
-            "type": "Number",
-            "default": 25
-          },
-          "label": "DEX"
-        },
-        "int": {
-          "value": {
-            "type": "Number",
-            "default": 25
-          },
-          "label": "INT"
-        },
-        "com": {
-          "value": {
-            "type": "Number",
-            "default": 25
-          },
-          "label": "COM"
-        }
+        "str": { "value": 25, "label": "STR" },
+        "dex": { "value": 25, "label": "DEX" },
+        "int": { "value": 25, "label": "INT" },
+        "com": { "value": 25, "label": "COM" }
       },
       "saves": {
-        "san": {
-          "value": {
-            "type": "Number",
-            "default": 20
-          },
-          "label": "SAN"
-        },
-        "ftr": {
-          "value": {
-            "type": "Number",
-            "default": 20
-          },
-          "label": "FTR"
-        },
-        "phy": {
-          "value": {
-            "type": "Number",
-            "default": 20
-          },
-          "label": "PHY"
-        }
+        "san": { "value": 20, "label": "SAN" },
+        "ftr": { "value": 20, "label": "FTR" },
+        "phy": { "value": 20, "label": "PHY" }
       },
       "resources": {
-        "hp": {
-          "value": {
-            "type": "Number",
-            "default": 15
-          },
-          "max": {
-            "type": "Number",
-            "default": 15
-          }
-        },
-        "stress": {
-          "value": {
-            "type": "Number",
-            "default": 0
-          }
-        }
+        "hp": { "value": 15, "max": 15 },
+        "stress": { "value": 0 }
       },
       "skills": {
-        "melee": {
-          "value": 0,
-          "label": "Melee"
-        },
-        "guns": {
-          "value": 0,
-          "label": "Guns"
-        },
-        "engineering": {
-          "value": 0,
-          "label": "Engineering"
-        },
-        "medical": {
-          "value": 0,
-          "label": "Medical"
-        },
-        "science": {
-          "value": 0,
-          "label": "Science"
-        },
-        "tech": {
-          "value": 0,
-          "label": "Tech"
-        },
-        "intimidate": {
-          "value": 0,
-          "label": "Intimidate"
-        },
-        "persuade": {
-          "value": 0,
-          "label": "Persuade"
-        },
-        "sleight": {
-          "value": 0,
-          "label": "Sleight"
-        },
-        "atmosphere": {
-          "value": 0,
-          "label": "Atmosphere"
-        },
-        "spacecraft": {
-          "value": 0,
-          "label": "Spacecraft"
-        },
-        "survival": {
-          "value": 0,
-          "label": "Survival"
-        }
+        "melee": { "value": 0, "label": "Melee" },
+        "guns": { "value": 0, "label": "Guns" },
+        "engineering": { "value": 0, "label": "Engineering" },
+        "medical": { "value": 0, "label": "Medical" },
+        "science": { "value": 0, "label": "Science" },
+        "tech": { "value": 0, "label": "Tech" },
+        "intimidate": { "value": 0, "label": "Intimidate" },
+        "persuade": { "value": 0, "label": "Persuade" },
+        "sleight": { "value": 0, "label": "Sleight" },
+        "atmosphere": { "value": 0, "label": "Atmosphere" },
+        "spacecraft": { "value": 0, "label": "Spacecraft" },
+        "survival": { "value": 0, "label": "Survival" }
       },
       "inventory": {
         "slots": {
-          "uniform": {
-            "type": "String",
-            "default": ""
-          },
-          "armor": {
-            "type": "String",
-            "default": ""
-          },
-          "head": {
-            "type": "String",
-            "default": ""
-          },
-          "belt": {
-            "type": "String",
-            "default": ""
-          },
-          "back": {
-            "type": "String",
-            "default": ""
-          },
-          "id": {
-            "type": "String",
-            "default": ""
-          },
-          "left_pocket": {
-            "type": "String",
-            "default": ""
-          },
-          "right_pocket": {
-            "type": "String",
-            "default": ""
-          },
-          "left_hand": {
-            "type": "String",
-            "default": ""
-          },
-          "right_hand": {
-            "type": "String",
-            "default": ""
-          },
-          "shoes": {
-            "type": "String",
-            "default": ""
-          },
-          "hands": {
-            "type": "String",
-            "default": ""
-          }
+          "uniform": "",
+          "armor": "",
+          "head": "",
+          "belt": "",
+          "back": "",
+          "id": "",
+          "left_pocket": "",
+          "right_pocket": "",
+          "left_hand": "",
+          "right_hand": "",
+          "shoes": "",
+          "hands": ""
         },
         "protection": {
-          "brute": {
-            "value": {
-              "type": "Number",
-              "default": 0
-            },
-            "max": {
-              "type": "Number",
-              "default": 0
-            }
-          },
-          "burn": {
-            "value": {
-              "type": "Number",
-              "default": 0
-            },
-            "max": {
-              "type": "Number",
-              "default": 0
-            }
-          },
-          "toxin": {
-            "value": {
-              "type": "Number",
-              "default": 0
-            },
-            "max": {
-              "type": "Number",
-              "default": 0
-            }
-          },
-          "radiation": {
-            "value": {
-              "type": "Number",
-              "default": 0
-            },
-            "max": {
-              "type": "Number",
-              "default": 0
-            }
-          }
+          "brute": { "value": 0, "max": 0 },
+          "burn": { "value": 0, "max": 0 },
+          "toxin": { "value": 0, "max": 0 },
+          "radiation": { "value": 0, "max": 0 }
         }
       }
     },
     "npc": {
       "attributes": {
-        "str": {
-          "value": {
-            "type": "Number",
-            "default": 25
-          },
-          "label": "STR"
-        },
-        "dex": {
-          "value": {
-            "type": "Number",
-            "default": 25
-          },
-          "label": "DEX"
-        },
-        "int": {
-          "value": {
-            "type": "Number",
-            "default": 25
-          },
-          "label": "INT"
-        },
-        "com": {
-          "value": {
-            "type": "Number",
-            "default": 25
-          },
-          "label": "COM"
-        }
+        "str": { "value": 25, "label": "STR" },
+        "dex": { "value": 25, "label": "DEX" },
+        "int": { "value": 25, "label": "INT" },
+        "com": { "value": 25, "label": "COM" }
       },
       "saves": {
-        "san": {
-          "value": {
-            "type": "Number",
-            "default": 20
-          },
-          "label": "SAN"
-        },
-        "ftr": {
-          "value": {
-            "type": "Number",
-            "default": 20
-          },
-          "label": "FTR"
-        },
-        "phy": {
-          "value": {
-            "type": "Number",
-            "default": 20
-          },
-          "label": "PHY"
-        }
+        "san": { "value": 20, "label": "SAN" },
+        "ftr": { "value": 20, "label": "FTR" },
+        "phy": { "value": 20, "label": "PHY" }
       },
       "resources": {
-        "hp": {
-          "value": {
-            "type": "Number",
-            "default": 15
-          },
-          "max": {
-            "type": "Number",
-            "default": 15
-          }
-        },
-        "stress": {
-          "value": {
-            "type": "Number",
-            "default": 0
-          }
-        }
+        "hp": { "value": 15, "max": 15 },
+        "stress": { "value": 0 }
       },
       "skills": {
-        "melee": {
-          "value": 0,
-          "label": "Melee"
-        },
-        "guns": {
-          "value": 0,
-          "label": "Guns"
-        },
-        "engineering": {
-          "value": 0,
-          "label": "Engineering"
-        },
-        "medical": {
-          "value": 0,
-          "label": "Medical"
-        },
-        "science": {
-          "value": 0,
-          "label": "Science"
-        },
-        "tech": {
-          "value": 0,
-          "label": "Tech"
-        },
-        "intimidate": {
-          "value": 0,
-          "label": "Intimidate"
-        },
-        "persuade": {
-          "value": 0,
-          "label": "Persuade"
-        },
-        "sleight": {
-          "value": 0,
-          "label": "Sleight"
-        },
-        "atmosphere": {
-          "value": 0,
-          "label": "Atmosphere"
-        },
-        "spacecraft": {
-          "value": 0,
-          "label": "Spacecraft"
-        },
-        "survival": {
-          "value": 0,
-          "label": "Survival"
-        }
+        "melee": { "value": 0, "label": "Melee" },
+        "guns": { "value": 0, "label": "Guns" },
+        "engineering": { "value": 0, "label": "Engineering" },
+        "medical": { "value": 0, "label": "Medical" },
+        "science": { "value": 0, "label": "Science" },
+        "tech": { "value": 0, "label": "Tech" },
+        "intimidate": { "value": 0, "label": "Intimidate" },
+        "persuade": { "value": 0, "label": "Persuade" },
+        "sleight": { "value": 0, "label": "Sleight" },
+        "atmosphere": { "value": 0, "label": "Atmosphere" },
+        "spacecraft": { "value": 0, "label": "Spacecraft" },
+        "survival": { "value": 0, "label": "Survival" }
       },
       "inventory": {
         "slots": {
-          "uniform": {
-            "type": "String",
-            "default": ""
-          },
-          "armor": {
-            "type": "String",
-            "default": ""
-          },
-          "head": {
-            "type": "String",
-            "default": ""
-          },
-          "belt": {
-            "type": "String",
-            "default": ""
-          },
-          "back": {
-            "type": "String",
-            "default": ""
-          },
-          "id": {
-            "type": "String",
-            "default": ""
-          },
-          "left_pocket": {
-            "type": "String",
-            "default": ""
-          },
-          "right_pocket": {
-            "type": "String",
-            "default": ""
-          },
-          "left_hand": {
-            "type": "String",
-            "default": ""
-          },
-          "right_hand": {
-            "type": "String",
-            "default": ""
-          },
-          "shoes": {
-            "type": "String",
-            "default": ""
-          },
-          "hands": {
-            "type": "String",
-            "default": ""
-          }
+          "uniform": "",
+          "armor": "",
+          "head": "",
+          "belt": "",
+          "back": "",
+          "id": "",
+          "left_pocket": "",
+          "right_pocket": "",
+          "left_hand": "",
+          "right_hand": "",
+          "shoes": "",
+          "hands": ""
         },
         "protection": {
-          "brute": {
-            "value": {
-              "type": "Number",
-              "default": 0
-            },
-            "max": {
-              "type": "Number",
-              "default": 0
-            }
-          },
-          "burn": {
-            "value": {
-              "type": "Number",
-              "default": 0
-            },
-            "max": {
-              "type": "Number",
-              "default": 0
-            }
-          },
-          "toxin": {
-            "value": {
-              "type": "Number",
-              "default": 0
-            },
-            "max": {
-              "type": "Number",
-              "default": 0
-            }
-          },
-          "radiation": {
-            "value": {
-              "type": "Number",
-              "default": 0
-            },
-            "max": {
-              "type": "Number",
-              "default": 0
-            }
-          }
+          "brute": { "value": 0, "max": 0 },
+          "burn": { "value": 0, "max": 0 },
+          "toxin": { "value": 0, "max": 0 },
+          "radiation": { "value": 0, "max": 0 }
         }
       }
     }
@@ -439,90 +111,37 @@
   "Item": {
     "types": ["weapon", "tool", "equipment", "ammo", "id", "grenade"],
     "weapon": {
-      "type": {
-        "type": "String",
-        "default": "range"
-      },
-      "damage": {
-        "type": "String",
-        "default": "1d10"
-      },
-      "damageType": {
-        "type": "String",
-        "default": "kinetic"
-      },
-      "range": {
-        "type": "Number",
-        "default": 10
-      },
-      "ammo": {
-        "type": "String",
-        "default": ""
-      },
-      "shots": {
-        "type": "Number",
-        "default": 10
-      },
-      "slot": {
-        "type": "String",
-        "default": "right_hand"
-      }
+      "type": "range",
+      "damage": "1d10",
+      "damageType": "kinetic",
+      "range": 10,
+      "ammo": "",
+      "shots": 10,
+      "slot": "right_hand"
     },
     "tool": {
-      "effect": {
-        "type": "String",
-        "default": ""
-      },
-      "slot": {
-        "type": "String",
-        "default": "belt"
-      }
+      "effect": "",
+      "slot": "belt"
     },
     "equipment": {
-      "slot": {
-        "type": "String",
-        "default": "uniform"
-      },
+      "slot": "uniform",
       "protection": {
-        "brute": {
-          "value": 0
-        },
-        "burn": {
-          "value": 0
-        },
-        "toxin": {
-          "value": 0
-        },
-        "radiation": {
-          "value": 0
-        }
+        "brute": { "value": 0 },
+        "burn": { "value": 0 },
+        "toxin": { "value": 0 },
+        "radiation": { "value": 0 }
       }
     },
     "ammo": {
-      "count": {
-        "type": "Number",
-        "default": 10
-      }
+      "count": 10
     },
     "id": {
-      "assignment": {
-        "type": "String",
-        "default": "assistant"
-      }
+      "assignment": "assistant"
     },
     "grenade": {
-      "effect": {
-        "type": "String",
-        "default": ""
-      },
-      "duration": {
-        "type": "String",
-        "default": "instant"
-      },
-      "slot": {
-        "type": "String",
-        "default": "left_hand"
-      }
+      "effect": "",
+      "duration": "instant",
+      "slot": "left_hand"
     }
   }
 }

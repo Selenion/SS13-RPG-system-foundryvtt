@@ -34,13 +34,14 @@ Hooks.once('init', async function() {
 
 // Set default type for new actors and items
 Hooks.on("preCreateActor", (document, createData, options, userId) => {
-  if (!createData.type) {
-    document.updateSource({ "type": "character" });
+  if (!createData.type) createData.type = "character";
+  // Initialize system data from template
+  const template = game.system.template.Actor[createData.type === "character" ? "character" : "npc"];
+  if (template && !createData.system) {
+    createData.system = foundry.utils.deepClone(template);
   }
 });
 
 Hooks.on("preCreateItem", (document, createData, options, userId) => {
-  if (!createData.type) {
-    document.updateSource({ "type": "equipment" });
-  }
+  if (!createData.type) createData.type = "equipment";
 });
