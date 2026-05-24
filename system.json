@@ -46,21 +46,12 @@
       "sheet": "SS13ActorSheet"
     }
   },
-  "itemTypes": {
-    "weapon": {
-      "label": "Weapon"
-    },
-    "tool": {
-      "label": "Tool"
-    },
-    "equipment": {
-      "label": "Equipment"
-    },
-    "ammo": {
-      "label": "Ammo"
-    },
-    "id": {
-      "label": "ID"
-    }
+"itemTypes": {
+    "weapon": { "label": "Weapon" },
+    "tool": { "label": "Tool" },
+    "equipment": { "label": "Equipment" },
+    "ammo": { "label": "Ammo" },
+    "id": { "label": "ID" },
+    "grenade": { "label": "Grenade" }
   }
 }
