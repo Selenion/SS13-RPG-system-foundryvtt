@@ -1,10 +1,25 @@
 // SS13 System initialization
 console.log("SS13 | === MODULE LOADING START ===");
 
-import { SS13ActorSheet } from "./scripts/actor.js";
-import { SS13ItemSheet } from "./scripts/item.js";
+let SS13ActorSheet, SS13ItemSheet;
 
-console.log("SS13 | Imports loaded");
+try {
+  const actorModule = await import("./scripts/actor.js");
+  SS13ActorSheet = actorModule.SS13ActorSheet;
+  console.log("SS13 | Actor sheet imported:", !!SS13ActorSheet);
+} catch (e) {
+  console.error("SS13 | Failed to import actor.js:", e);
+}
+
+try {
+  const itemModule = await import("./scripts/item.js");
+  SS13ItemSheet = itemModule.SS13ItemSheet;
+  console.log("SS13 | Item sheet imported:", !!SS13ItemSheet);
+} catch (e) {
+  console.error("SS13 | Failed to import item.js:", e);
+}
+
+console.log("SS13 | Imports completed");
 
 // Default actor data template
 const DEFAULT_ACTOR_DATA = {
