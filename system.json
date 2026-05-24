@@ -1,7 +1,7 @@
 {
   "id": "ss13",
   "title": "Space Station 13 RPG",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
@@ -47,10 +47,20 @@
     }
   },
   "itemTypes": {
-    "weapon": { "label": "Weapon" },
-    "tool": { "label": "Tool" },
-    "equipment": { "label": "Equipment" },
-    "ammo": { "label": "Ammo" },
-    "id": { "label": "ID" }
+    "weapon": {
+      "label": "Weapon"
+    },
+    "tool": {
+      "label": "Tool"
+    },
+    "equipment": {
+      "label": "Equipment"
+    },
+    "ammo": {
+      "label": "Ammo"
+    },
+    "id": {
+      "label": "ID"
+    }
   }
 }
