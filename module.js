@@ -31,3 +31,16 @@ Hooks.once('init', async function() {
     makeDefault: true 
   });
 });
+
+// Set default type for new actors and items
+Hooks.on("preCreateActor", (document, createData, options, userId) => {
+  if (!createData.type) {
+    document.updateSource({ "type": "character" });
+  }
+});
+
+Hooks.on("preCreateItem", (document, createData, options, userId) => {
+  if (!createData.type) {
+    document.updateSource({ "type": "equipment" });
+  }
+});
