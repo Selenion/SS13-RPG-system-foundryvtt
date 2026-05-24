@@ -126,10 +126,10 @@
     "equipment": {
       "slot": "uniform",
       "protection": {
-        "brute": { "value": 0 },
-        "burn": { "value": 0 },
-        "toxin": { "value": 0 },
-        "radiation": { "value": 0 }
+        "brute": 0,
+        "burn": 0,
+        "toxin": 0,
+        "radiation": 0
       }
     },
     "ammo": {
