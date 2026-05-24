@@ -2,7 +2,7 @@
 export class SS13ActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: 'templates/actor-sheet.html',
+      template: 'systems/ss13/templates/actor-sheet.html',
       classes: ['ss13', 'sheet', 'actor'],
       width: 500,
       height: 600
