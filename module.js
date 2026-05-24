@@ -1,25 +1,10 @@
 // SS13 System initialization
 console.log("SS13 | === MODULE LOADING START ===");
 
-let SS13ActorSheet, SS13ItemSheet;
+import { SS13Actor, SS13ActorSheet } from "./scripts/actor.js";
+import { SS13ItemSheet } from "./scripts/item.js";
 
-try {
-  const actorModule = await import("./scripts/actor.js");
-  SS13ActorSheet = actorModule.SS13ActorSheet;
-  console.log("SS13 | Actor sheet imported:", !!SS13ActorSheet);
-} catch (e) {
-  console.error("SS13 | Failed to import actor.js:", e);
-}
-
-try {
-  const itemModule = await import("./scripts/item.js");
-  SS13ItemSheet = itemModule.SS13ItemSheet;
-  console.log("SS13 | Item sheet imported:", !!SS13ItemSheet);
-} catch (e) {
-  console.error("SS13 | Failed to import item.js:", e);
-}
-
-console.log("SS13 | Imports completed");
+console.log("SS13 | Imports loaded");
 
 // Default actor data template
 const DEFAULT_ACTOR_DATA = {
@@ -133,8 +118,12 @@ window.SS13Roll = {
 Hooks.once('init', async function() {
   console.log('SS13 System | Initializing');
   console.log('SS13 | Game available:', !!game);
+  console.log('SS13 | Actor class:', typeof SS13Actor);
   console.log('SS13 | Actor Sheet class:', typeof SS13ActorSheet);
   console.log('SS13 | Item Sheet class:', typeof SS13ItemSheet);
+  
+  // Register custom Actor document class
+  CONFIG.Actor.documentClass = SS13Actor;
   
   Actors.registerSheet("ss13", SS13ActorSheet, { 
     types: ["character", "npc"], 
