@@ -126,19 +126,19 @@ Hooks.once('init', async function() {
 
 // Set default type for new actors and items
 Hooks.on("preCreateActor", (document, createData, options, userId) => {
-  console.log("SS13 | preCreateActor called", {
-    type: createData.type,
-    system: createData.system,
-    hasSystem: !!createData.system,
-    systemKeys: createData.system ? Object.keys(createData.system) : 'no system'
-  });
-  
   if (!createData.type) createData.type = "character";
-  // Use updateSource to properly modify createData in FoundryVTT 12+
-  if (!createData.system) {
+  if (!createData.system?.attributes) {
     const template = DEFAULT_ACTOR_DATA[createData.type] || DEFAULT_ACTOR_DATA.character;
     document.updateSource({ system: foundry.utils.deepClone(template) });
-    console.log("SS13 | Initialized system data via updateSource");
+  }
+});
+
+// Backup: ensure actor has data after creation
+Hooks.on("createActor", (actor, options, userId) => {
+  if (!actor.system?.attributes) {
+    const template = actor.type === "character" ? 
+      DEFAULT_ACTOR_DATA.character : DEFAULT_ACTOR_DATA.npc;
+    actor.update({ system: foundry.utils.deepClone(template) });
   }
 });
 
