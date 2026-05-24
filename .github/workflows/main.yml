@@ -1,0 +1,70 @@
+name: Bump version on merge to main
+
+# By default bumps patch (0.1.0 → 0.1.1).
+# Add [minor] to commit message to bump minor (0.1.1 → 0.2.0).
+# Add [major] to commit message to bump major (0.2.0 → 1.0.0).
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "README.md"
+      - "assets/screenshots/**"
+      - ".github/**"
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determine bump type from commit message
+        id: bump_type
+        run: |
+          msg=$(git log -1 --pretty=%B)
+          if echo "$msg" | grep -qi '\[major\]'; then
+            echo "type=major" >> "$GITHUB_OUTPUT"
+          elif echo "$msg" | grep -qi '\[minor\]'; then
+            echo "type=minor" >> "$GITHUB_OUTPUT"
+          else
+            echo "type=patch" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Bump version in system.json
+        run: |
+          current=$(jq -r '.version' system.json)
+          echo "Current version: $current"
+          # Split base and pre-release tag (e.g. 0.1.0-alpha → base=0.1.0, tag=-alpha)
+          base=$(echo "$current" | sed 's/-.*//')
+          tag=$(echo "$current" | grep -oP '\-.*' || true)
+          major=$(echo "$base" | cut -d. -f1)
+          minor=$(echo "$base" | cut -d. -f2)
+          patch=$(echo "$base" | cut -d. -f3)
+          case "${{ steps.bump_type.outputs.type }}" in
+            major)
+              major=$((major + 1))
+              minor=0
+              patch=0
+              ;;
+            minor)
+              minor=$((minor + 1))
+              patch=0
+              ;;
+            *)
+              patch=$((patch + 1))
+              ;;
+          esac
+          new_version="${major}.${minor}.${patch}${tag}"
+          echo "New version: $new_version"
+          jq --arg v "$new_version" '.version = $v' system.json > tmp.json && mv tmp.json system.json
+      - name: Commit version bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add system.json
+          git diff --cached --quiet && echo "No changes" && exit 0
+          new_version=$(jq -r '.version' system.json)
+          git commit -m "chore: bump version to ${new_version}"
+          git push
