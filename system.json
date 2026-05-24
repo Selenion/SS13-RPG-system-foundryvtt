@@ -1,7 +1,7 @@
 {
   "id": "ss13",
   "title": "Space Station 13 RPG",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
@@ -35,5 +35,5 @@
     "distance": 5,
     "units": "ft"
   },
-"initiative": "normal"
+  "initiative": "normal"
 }
