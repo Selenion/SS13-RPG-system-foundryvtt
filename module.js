@@ -23,7 +23,7 @@ Hooks.once('init', async function() {
   console.log('SS13 System | Initializing');
   
   Actors.registerSheet("ss13", SS13ActorSheet, { 
-    types: ["character"], 
+    types: ["character", "npc"], 
     makeDefault: true 
   });
   

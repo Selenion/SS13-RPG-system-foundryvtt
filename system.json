@@ -35,5 +35,15 @@
     "distance": 5,
     "units": "ft"
   },
-  "initiative": "normal"
+  "initiative": "normal",
+  "actorTypes": {
+    "character": {
+      "label": "Character",
+      "sheet": "SS13ActorSheet"
+    },
+    "npc": {
+      "label": "NPC",
+      "sheet": "SS13ActorSheet"
+    }
+  }
 }
