@@ -1,9 +1,11 @@
 {
-  "name": "ss13",
+  "id": "ss13",
   "title": "Space Station 13 RPG",
   "version": "1.0.0",
-  "minimumCoreVersion": "10",
-  "compatibleCoreVersion": "11",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "13"
+  },
   "languages": [
     {
       "lang": "ru",
@@ -12,7 +14,7 @@
     },
     {
       "lang": "en",
-      "name": "English", 
+      "name": "English",
       "path": "lang/en.json"
     }
   ],
@@ -22,14 +24,16 @@
   "styles": [
     "styles/ss13.css"
   ],
+  "template": "template.json",
   "packs": [],
   "socket": false,
-  "manifest": "",
-  "download": "",
+  "manifest": "https://raw.githubusercontent.com/Selenion/SS13-RPG-system-foundryvtt/main/system.json",
+  "download": "https://github.com/Selenion/SS13-RPG-system-foundryvtt/archive/refs/heads/main.zip",
   "changelog": "changelog.html",
-  "library": "libs/",
-  "initiative": "normal",
-  "gridDistance": 5,
-  "gridUnits": "ft",
-  "primarySetting": "settings"
+  "grid": {
+    "type": 1,
+    "distance": 5,
+    "units": "ft"
+  },
+  "initiative": "normal"
 }
