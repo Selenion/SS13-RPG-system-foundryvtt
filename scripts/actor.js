@@ -1,7 +1,7 @@
 // Actor Sheet
 export class SS13ActorSheet extends ActorSheet {
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       template: 'systems/ss13/templates/actor-sheet.html',
       classes: ['ss13', 'sheet', 'actor'],
       width: 500,
