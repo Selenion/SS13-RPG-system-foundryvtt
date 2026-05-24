@@ -126,10 +126,19 @@ Hooks.once('init', async function() {
 
 // Set default type for new actors and items
 Hooks.on("preCreateActor", (document, createData, options, userId) => {
+  console.log("SS13 | preCreateActor called", {
+    type: createData.type,
+    system: createData.system,
+    hasSystem: !!createData.system,
+    hasAttributes: !!createData.system?.attributes,
+    systemKeys: createData.system ? Object.keys(createData.system) : 'no system'
+  });
+  
   if (!createData.type) createData.type = "character";
-  if (!createData.system) {
+  if (!createData.system?.attributes) {
     const template = DEFAULT_ACTOR_DATA[createData.type] || DEFAULT_ACTOR_DATA.character;
     createData.system = foundry.utils.deepClone(template);
+    console.log("SS13 | Initialized system data");
   }
 });
 
