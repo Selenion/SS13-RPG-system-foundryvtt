@@ -1,6 +1,10 @@
 // SS13 System initialization
+console.log("SS13 | === MODULE LOADING START ===");
+
 import { SS13ActorSheet } from "./scripts/actor.js";
 import { SS13ItemSheet } from "./scripts/item.js";
+
+console.log("SS13 | Imports loaded");
 
 // Default actor data template
 const DEFAULT_ACTOR_DATA = {
@@ -113,6 +117,9 @@ window.SS13Roll = {
 
 Hooks.once('init', async function() {
   console.log('SS13 System | Initializing');
+  console.log('SS13 | Game available:', !!game);
+  console.log('SS13 | Actor Sheet class:', typeof SS13ActorSheet);
+  console.log('SS13 | Item Sheet class:', typeof SS13ItemSheet);
   
   Actors.registerSheet("ss13", SS13ActorSheet, { 
     types: ["character", "npc"], 
