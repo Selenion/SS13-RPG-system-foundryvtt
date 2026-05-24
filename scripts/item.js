@@ -18,8 +18,3 @@ export class SS13ItemSheet extends ItemSheet {
     return data;
   }
 }
-
-// Register the sheet
-Hooks.once('init', () => {
-  Items.registerSheet("ss13", SS13ItemSheet, { makeDefault: true });
-});

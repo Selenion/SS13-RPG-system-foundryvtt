@@ -23,8 +23,3 @@ export class SS13ActorSheet extends ActorSheet {
     });
   }
 }
-
-// Register after init
-Hooks.once('init', () => {
-  Actors.registerSheet('ss13', SS13ActorSheet, {makeDefault: true});
-});
