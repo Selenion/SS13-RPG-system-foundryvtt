@@ -96,7 +96,8 @@ export class SS13Actor extends Actor {
         }
       };
       
-      this.update({ system: defaultData });
+      // Directly modify system data instead of calling update()
+      Object.assign(this.system, defaultData);
     }
   }
 }
