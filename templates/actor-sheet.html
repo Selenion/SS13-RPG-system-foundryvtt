@@ -24,6 +24,22 @@
   </section>
   <section class="skills">
     <h3>Skills</h3>
+    <div class="profession">
+      <label>Profession</label>
+      <select class="profession-select" name="system.profession.id">
+        {{#each professionConfig.professionOptions as |profession|}}
+        <option value="{{profession.id}}" {{#if profession.selected}}selected{{/if}}>{{profession.label}}</option>
+        {{/each}}
+      </select>
+      {{#if system.profession.id}}
+      <label>Specialization</label>
+      <select class="specialization-select" name="system.profession.specialization">
+        {{#each professionConfig.engineerSpecializations as |spec|}}
+        <option value="{{spec.id}}" {{#if spec.selected}}selected{{/if}}>{{spec.label}}</option>
+        {{/each}}
+      </select>
+      {{/if}}
+    </div>
     {{#each system.skills as |skill key|}}
     <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}}: {{skill.value}}</button>
     {{/each}}
@@ -31,7 +47,7 @@
   <section class="inventory">
     <h3>Inventory</h3>
     <div class="slots">
-      {{#each system.inventory.slots as |slot itemId key|}}
+      {{#each system.inventory.slots as |itemId key|}}
       <div class="slot {{key}}">
         <label>{{key}}</label>
         <span>{{itemId}}</span>
