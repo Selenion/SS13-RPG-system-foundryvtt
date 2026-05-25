@@ -1,6 +1,9 @@
 <form class="ss13-sheet">
   <header>
-    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/></h1>
+    <div class="header-top">
+      <img class="actor-avatar" src="{{actor.img}}" data-edit="img" alt="{{actor.name}}"/>
+      <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/></h1>
+    </div>
     <div class="stats">
       <div class="resources">
         <label>HP: <input name="system.resources.hp.value" type="number" value="{{system.resources.hp.value}}"/></label>

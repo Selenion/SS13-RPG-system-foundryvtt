@@ -57,6 +57,24 @@
   padding: 6px 8px;
 }
 
+.ss13-sheet .header-top {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ss13-sheet .actor-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  border: 1px solid var(--ss13-border);
+  background: var(--ss13-panel);
+  object-fit: cover;
+  cursor: pointer;
+}
+
 .ss13-sheet h3 {
   color: var(--ss13-accent);
   margin: 0 0 8px;
