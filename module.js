@@ -41,7 +41,7 @@ const DEFAULT_ACTOR_DATA = {
     inventory: {
       slots: {
         uniform: "", armor: "", head: "", belt: "", back: "",
-        id: "", left_pocket: "", right_pocket: "",
+        id: "", ears: "", left_pocket: "", right_pocket: "",
         left_hand: "", right_hand: "", shoes: "", hands: ""
       },
       protection: {
@@ -85,7 +85,7 @@ const DEFAULT_ACTOR_DATA = {
     inventory: {
       slots: {
         uniform: "", armor: "", head: "", belt: "", back: "",
-        id: "", left_pocket: "", right_pocket: "",
+        id: "", ears: "", left_pocket: "", right_pocket: "",
         left_hand: "", right_hand: "", shoes: "", hands: ""
       },
       protection: {

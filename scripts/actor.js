@@ -37,7 +37,7 @@ const ACTOR_DEFAULTS = {
   inventory: {
     slots: {
       uniform: "", armor: "", head: "", belt: "", back: "",
-      id: "", left_pocket: "", right_pocket: "",
+      id: "", ears: "", left_pocket: "", right_pocket: "",
       left_hand: "", right_hand: "", shoes: "", hands: ""
     },
     protection: {
@@ -106,6 +106,7 @@ const SLOT_ICONS = {
   belt: "systems/ss13/icons/slots/belt.png",
   back: "systems/ss13/icons/slots/back.png",
   id: "systems/ss13/icons/slots/id.png",
+  ears: "systems/ss13/icons/slots/ears.png",
   left_pocket: "systems/ss13/icons/slots/pocket.png",
   right_pocket: "systems/ss13/icons/slots/pocket.png",
   left_hand: "systems/ss13/icons/slots/hand_l.png",
@@ -121,6 +122,7 @@ const SLOT_ORDER = [
   "back",
   "belt",
   "id",
+  "ears",
   "left_pocket",
   "right_pocket",
   "left_hand",
