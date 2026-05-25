@@ -7,8 +7,18 @@ export class SS13Actor extends Actor {
     const system = this.system;
     const isNPC = this.type === "npc";
     
+    console.log(`SS13 | prepareData called for actor: ${this.name} (type: ${this.type})`);
+    console.log(`SS13 | Current system state:`, {
+      hasAttributes: !!system.attributes,
+      hasSaves: !!system.saves,
+      hasResources: !!system.resources,
+      hasSkills: !!system.skills,
+      hasInventory: !!system.inventory
+    });
+    
     // Initialize attributes if missing
     if (!system.attributes) {
+      console.log("SS13 | Initializing attributes");
       system.attributes = isNPC ? {
         str: { value: 25, label: "STR" },
         dex: { value: 25, label: "DEX" },
@@ -24,6 +34,7 @@ export class SS13Actor extends Actor {
     
     // Initialize saves if missing
     if (!system.saves) {
+      console.log("SS13 | Initializing saves");
       system.saves = {
         san: { value: 20, label: "SAN" },
         ftr: { value: 20, label: "FTR" },
@@ -33,6 +44,7 @@ export class SS13Actor extends Actor {
     
     // Initialize resources if missing
     if (!system.resources) {
+      console.log("SS13 | Initializing resources");
       system.resources = {
         hp: { value: 15, max: 15 },
         stress: { value: 0 }
@@ -41,6 +53,7 @@ export class SS13Actor extends Actor {
     
     // Initialize skills if missing
     if (!system.skills) {
+      console.log("SS13 | Initializing skills");
       system.skills = {
         melee: { value: 0, label: "Melee" },
         guns: { value: 0, label: "Guns" },
@@ -59,6 +72,7 @@ export class SS13Actor extends Actor {
     
     // Initialize inventory if missing
     if (!system.inventory) {
+      console.log("SS13 | Initializing inventory");
       system.inventory = {
         slots: {
           uniform: "", armor: "", head: "", belt: "", back: "",
@@ -73,6 +87,14 @@ export class SS13Actor extends Actor {
         }
       };
     }
+    
+    console.log(`SS13 | After initialization:`, {
+      attributes: !!system.attributes,
+      saves: !!system.saves,
+      resources: !!system.resources,
+      skills: !!system.skills,
+      inventory: !!system.inventory
+    });
   }
 }
 
