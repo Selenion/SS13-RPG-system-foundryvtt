@@ -38,7 +38,7 @@ const ACTOR_DEFAULTS = {
     slots: {
       uniform: "", armor: "", head: "", belt: "", back: "",
       id: "", left_pocket: "", right_pocket: "",
-      left_hand: "", right_hand: "", shoes: "", hands: ""
+      left_hand: "", right_hand: "", shoes: ""
     },
     protection: {
       brute: { value: 0, max: 0 },
@@ -93,8 +93,7 @@ const SLOT_ICONS = {
   right_pocket: "systems/ss13/icons/slots/pocket.png",
   left_hand: "systems/ss13/icons/slots/hand_l.png",
   right_hand: "systems/ss13/icons/slots/hand_r.png",
-  shoes: "systems/ss13/icons/slots/shoes.png",
-  hands: "systems/ss13/icons/slots/gloves.png"
+  shoes: "systems/ss13/icons/slots/shoes.png"
 };
 
 function applySpecializationBonuses(systemData) {

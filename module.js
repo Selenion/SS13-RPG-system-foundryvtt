@@ -42,7 +42,7 @@ const DEFAULT_ACTOR_DATA = {
       slots: {
         uniform: "", armor: "", head: "", belt: "", back: "",
         id: "", left_pocket: "", right_pocket: "",
-        left_hand: "", right_hand: "", shoes: "", hands: ""
+        left_hand: "", right_hand: "", shoes: ""
       },
       protection: {
         brute: { value: 0, max: 0 },
@@ -86,7 +86,7 @@ const DEFAULT_ACTOR_DATA = {
       slots: {
         uniform: "", armor: "", head: "", belt: "", back: "",
         id: "", left_pocket: "", right_pocket: "",
-        left_hand: "", right_hand: "", shoes: "", hands: ""
+        left_hand: "", right_hand: "", shoes: ""
       },
       protection: {
         brute: { value: 0, max: 0 },
