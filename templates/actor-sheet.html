@@ -31,14 +31,6 @@
         <option value="{{profession.id}}" {{#if profession.selected}}selected{{/if}}>{{profession.label}}</option>
         {{/each}}
       </select>
-      {{#if system.profession.id}}
-      <label>Specialization</label>
-      <select class="specialization-select" name="system.profession.specialization">
-        {{#each professionConfig.engineerSpecializations as |spec|}}
-        <option value="{{spec.id}}" {{#if spec.selected}}selected{{/if}}>{{spec.label}}</option>
-        {{/each}}
-      </select>
-    {{/if}}
     </div>
     {{#each system.skills as |skill key|}}
     <div class="skill-row">

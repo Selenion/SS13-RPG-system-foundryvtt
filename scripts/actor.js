@@ -49,15 +49,47 @@ const ACTOR_DEFAULTS = {
   }
 };
 
-const ENGINEER_SPECIALIZATIONS = {
-  atmos_tech: {
-    label: "Atmospheric Technician",
-    bonuses: { engineering: 15, atmosphere: 20, tech: 10 }
-  },
-  engine_operator: {
-    label: "Engine Operator",
-    bonuses: { engineering: 20, tech: 15, science: 10 }
-  }
+const PROFESSION_TEMPLATES = {
+  captain: { label: "Captain", skills: { persuade: 15, intimidate: 10, guns: 10, survival: 10 } },
+  head_of_personnel: { label: "Head of Personnel", skills: { persuade: 20, tech: 10, sleight: 10 } },
+  head_of_security: { label: "Head of Security", skills: { guns: 20, melee: 15, intimidate: 15 } },
+  chief_engineer: { label: "Chief Engineer", skills: { engineering: 20, tech: 15, atmosphere: 10 } },
+  research_director: { label: "Research Director", skills: { science: 20, tech: 15, engineering: 10 } },
+  chief_medical_officer: { label: "Chief Medical Officer", skills: { medical: 25, science: 15, persuade: 5 } },
+  quartermaster: { label: "Quartermaster", skills: { persuade: 10, tech: 10, survival: 10 } },
+  warden: { label: "Warden", skills: { intimidate: 20, guns: 15, melee: 10 } },
+  security_officer: { label: "Security Officer", skills: { guns: 20, melee: 15, intimidate: 10 } },
+  detective: { label: "Detective", skills: { sleight: 15, guns: 10, persuade: 10 } },
+  prisoner: { label: "Prisoner", skills: { sleight: 10, survival: 10 } },
+  station_engineer: { label: "Station Engineer", skills: { engineering: 20, tech: 15, atmosphere: 10 } },
+  atmospheric_technician: { label: "Atmospheric Technician", skills: { atmosphere: 25, engineering: 15, tech: 10 } },
+  geneticist: { label: "Geneticist", skills: { science: 20, medical: 10, tech: 10 } },
+  scientist: { label: "Scientist", skills: { science: 25, tech: 10 } },
+  roboticist: { label: "Roboticist", skills: { tech: 20, engineering: 15, science: 10 } },
+  doctor: { label: "Doctor", skills: { medical: 20, science: 10, persuade: 5 } },
+  paramedic: { label: "Paramedic", skills: { medical: 15, survival: 15, melee: 5 } },
+  chemist: { label: "Chemist", skills: { science: 20, medical: 10, tech: 5 } },
+  cargo_technician: { label: "Cargo Technician", skills: { survival: 10, persuade: 10, engineering: 5 } },
+  shaft_miner: { label: "Shaft Miner", skills: { survival: 20, melee: 10, engineering: 10 } },
+  janitor: { label: "Janitor", skills: { tech: 10, survival: 10 } },
+  bartender: { label: "Bartender", skills: { persuade: 15, melee: 10 } },
+  chef: { label: "Chef", skills: { survival: 10, melee: 10 } },
+  botanist: { label: "Botanist", skills: { science: 10, survival: 15 } },
+  assistant: { label: "Assistant", skills: { sleight: 10, tech: 10, survival: 10 } },
+  clown: { label: "Clown", skills: { persuade: 10, sleight: 10 } },
+  mime: { label: "Mime", skills: { sleight: 10, persuade: 10 } },
+  chaplain: { label: "Chaplain", skills: { persuade: 10, survival: 10 } },
+  curator: { label: "Curator", skills: { science: 10, persuade: 10 } },
+  lawyer: { label: "Lawyer", skills: { persuade: 20, intimidate: 5 } },
+  psychologist: { label: "Psychologist", skills: { persuade: 20, medical: 5 } },
+  coroner: { label: "Coroner", skills: { medical: 15, science: 10 } },
+  nanotrasen_representative: { label: "NanoTrasen Representative", skills: { persuade: 20, intimidate: 10 } },
+  magistrate: { label: "Magistrate", skills: { intimidate: 15, persuade: 15 } },
+  blueshield_officer: { label: "Blueshield Officer", skills: { guns: 15, intimidate: 10, melee: 10 } },
+  explorer: { label: "Explorer", skills: { survival: 20, science: 10, spacecraft: 10 } },
+  bitrunner: { label: "Bitrunner", skills: { tech: 20, science: 10 } },
+  ai: { label: "AI", skills: { tech: 25, science: 15 } },
+  cyborg: { label: "Cyborg", skills: { tech: 20, engineering: 10 } }
 };
 
 const SKILL_BONUS_BY_RANK = {
@@ -65,21 +97,6 @@ const SKILL_BONUS_BY_RANK = {
   1: 10,
   2: 15,
   3: 20
-};
-
-const SKILL_BASES = {
-  melee: "str",
-  guns: "com",
-  engineering: "int",
-  medical: "int",
-  science: "int",
-  tech: "int",
-  intimidate: "com",
-  persuade: "com",
-  sleight: "dex",
-  atmosphere: "int",
-  spacecraft: "int",
-  survival: "phy"
 };
 
 const SLOT_ICONS = {
@@ -114,14 +131,11 @@ const SLOT_ORDER = [
 
 function applySpecializationBonuses(systemData) {
   if (!systemData?.profession || !systemData?.skills) return;
-  if (systemData.profession.id !== "engineer" || Number(systemData.profession.level) !== 1) return;
-  const specialization = ENGINEER_SPECIALIZATIONS[systemData.profession.specialization];
-  if (!specialization) return;
-
-  for (const [skillKey, bonusValue] of Object.entries(specialization.bonuses)) {
+  const professionConfig = PROFESSION_TEMPLATES[systemData.profession.id];
+  if (!professionConfig?.skills) return;
+  for (const [skillKey, bonusValue] of Object.entries(professionConfig.skills)) {
     if (!systemData.skills[skillKey]) continue;
-    const currentValue = Number(systemData.skills[skillKey].value) || 0;
-    systemData.skills[skillKey].value = Math.max(currentValue, bonusValue);
+    systemData.skills[skillKey].value = Math.max(Number(systemData.skills[skillKey].value) || 0, bonusValue);
   }
 }
 
@@ -129,14 +143,11 @@ function enrichSkillsForMothership(systemData) {
   if (!systemData?.skills || !systemData?.attributes || !systemData?.saves) return;
 
   for (const [skillKey, skillData] of Object.entries(systemData.skills)) {
-    const baseKey = SKILL_BASES[skillKey] || "int";
-    const baseSource = systemData.attributes[baseKey] ?? systemData.saves[baseKey];
-    const baseValue = Number(baseSource?.value) || 0;
     const rank = Number(skillData.rank ?? 0);
     const legacyValue = Number(skillData.value) || 0;
     const bonus = SKILL_BONUS_BY_RANK[rank] ?? legacyValue;
     skillData.rank = rank;
-    skillData.target = Math.max(baseValue + bonus, legacyValue);
+    skillData.target = legacyValue + bonus;
   }
 }
 
@@ -177,13 +188,13 @@ export class SS13ActorSheet extends ActorSheet {
     context.professionConfig = {
       professionOptions: [
         { id: "", label: "None", selected: !context.system.profession.id },
-        { id: "engineer", label: "Engineer (Level 1)", selected: context.system.profession.id === "engineer" }
+        ...Object.entries(PROFESSION_TEMPLATES).map(([id, data]) => ({
+          id,
+          label: data.label,
+          selected: context.system.profession.id === id
+        }))
       ],
-      engineerSpecializations: Object.entries(ENGINEER_SPECIALIZATIONS).map(([id, data]) => ({
-        id,
-        label: data.label,
-        selected: context.system.profession.specialization === id
-      }))
+      engineerSpecializations: []
     };
     const slotData = context.system.inventory?.slots ?? {};
     context.inventorySlots = SLOT_ORDER.filter(key => key in slotData).map(key => ({
@@ -216,21 +227,7 @@ export class SS13ActorSheet extends ActorSheet {
       );
       currentSystem.profession.id = professionId;
       currentSystem.profession.level = 1;
-      currentSystem.profession.specialization = professionId === "engineer" ? "atmos_tech" : "";
-      applySpecializationBonuses(currentSystem);
-      await this.actor.update({ system: currentSystem });
-    });
-
-    html.find(".specialization-select").change(async ev => {
-      const specializationId = String(ev.currentTarget.value || "");
-      const currentSystem = foundry.utils.mergeObject(
-        foundry.utils.deepClone(ACTOR_DEFAULTS),
-        foundry.utils.deepClone(this.actor.system ?? {}),
-        { inplace: false }
-      );
-      currentSystem.profession.id = "engineer";
-      currentSystem.profession.level = 1;
-      currentSystem.profession.specialization = specializationId;
+      currentSystem.profession.specialization = "";
       applySpecializationBonuses(currentSystem);
       await this.actor.update({ system: currentSystem });
     });

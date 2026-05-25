@@ -108,28 +108,11 @@ window.SS13Roll = {
     const skillValue = Number(skillData?.value ?? 0);
     const skillTarget = Number(skillData?.target ?? 0);
     const skillBonusByRank = { 0: 0, 1: 10, 2: 15, 3: 20 };
-    const skillBaseMap = {
-      melee: "str",
-      guns: "com",
-      engineering: "int",
-      medical: "int",
-      science: "int",
-      tech: "int",
-      intimidate: "com",
-      persuade: "com",
-      sleight: "dex",
-      atmosphere: "int",
-      spacecraft: "int",
-      survival: "phy"
-    };
 
     let value = actor.system.saves?.[skill]?.value || 20;
     if (skillData) {
-      const baseKey = skillBaseMap[skill] || "int";
-      const baseSource = actor.system.attributes?.[baseKey] ?? actor.system.saves?.[baseKey];
-      const baseValue = Number(baseSource?.value) || 0;
       const rankBonus = skillBonusByRank[skillRank] ?? skillValue;
-      value = Math.max(baseValue + rankBonus, skillTarget, skillValue);
+      value = Math.max(skillValue + rankBonus, skillTarget, skillValue);
     }
 
     const roll = await new Roll('1d100').evaluate({async: false});
