@@ -1,112 +1,151 @@
 :root {
-  --ss13-dark: #262626;
-  --ss13-section: rgba(0, 0, 0, 0.33);
-  --ss13-red: #d92626;
-  --ss13-orange: #f26c0d;
-  --ss13-green: #1fad4e;
-  --ss13-blue: #2a79c8;
-  --ss13-text: #fff;
+  --ss13-bg: #161b22;
+  --ss13-panel: #222b36;
+  --ss13-panel-2: #2a3441;
+  --ss13-border: #3f4f62;
+  --ss13-accent: #55a6ff;
+  --ss13-accent-2: #f0a34a;
+  --ss13-text: #e8eef7;
+  --ss13-muted: #9eb0c7;
+}
+
+.ss13.sheet.actor .window-content {
+  background: radial-gradient(circle at top, #263548 0%, var(--ss13-bg) 55%);
 }
 
 .ss13-sheet {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--ss13-dark);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   color: var(--ss13-text);
+  padding: 12px;
+}
+
+.ss13-sheet header,
+.ss13-sheet section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.08));
+  border: 1px solid var(--ss13-border);
+  border-radius: 8px;
   padding: 10px;
-}
-
-.ss13-sheet header {
-  border-bottom: 2px solid var(--ss13-red);
   margin-bottom: 10px;
-  padding-bottom: 5px;
 }
 
-.ss13-sheet h1, .ss13-sheet h2, .ss13-sheet h3 {
-  color: var(--ss13-red);
-  margin: 5px 0;
+.ss13-sheet h1 input {
+  width: 100%;
+  color: var(--ss13-text);
+  background: var(--ss13-panel);
+  border: 1px solid var(--ss13-border);
+  border-radius: 6px;
+  font-size: 20px;
+  padding: 6px 8px;
+}
+
+.ss13-sheet h3 {
+  color: var(--ss13-accent);
+  margin: 0 0 8px;
+  letter-spacing: 0.4px;
 }
 
 .ss13-sheet .stats {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.ss13-sheet .resources {
-  display: flex;
-  gap: 15px;
-}
-
-.ss13-sheet .resources label {
-  background: var(--ss13-section);
-  padding: 5px 10px;
-  border-radius: 3px;
-}
-
-.ss13-sheet .attributes {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 10px;
 }
 
-.ss13-sheet .attr {
-  text-align: center;
-  background: var(--ss13-section);
-  padding: 5px;
-  border-radius: 3px;
-  min-width: 50px;
-}
-
-.ss13-sheet .attr label {
-  display: block;
-  font-weight: bold;
-  color: var(--ss13-orange);
-}
-
-.ss13-sheet input[type="number"] {
-  width: 50px;
-  background: var(--ss13-dark);
-  color: var(--ss13-text);
-  border: 1px solid var(--ss13-red);
-  text-align: center;
-}
-
-.ss13-sheet .skills, .ss13-sheet .saves {
-  margin-top: 10px;
-}
-
-.ss13-sheet .skills h3, .ss13-sheet .saves h3 {
-  color: var(--ss13-blue);
-}
-
-.ss13-sheet .skill-roll, .save-roll {
-  margin: 2px;
-  padding: 5px 10px;
-  background: var(--ss13-section);
-  color: var(--ss13-text);
-  border: 1px solid var(--ss13-red);
-  cursor: pointer;
-  border-radius: 3px;
-  transition: all 0.2s;
-}
-
-.ss13-sheet .skill-roll:hover, .save-roll:hover {
-  background: var(--ss13-red);
-  color: var(--ss13-text);
-}
-
-.ss13-sheet .inventory {
-  margin-top: 10px;
-}
-
-.ss13-sheet .slots {
+.ss13-sheet .resources,
+.ss13-sheet .attributes {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 8px;
 }
 
-.ss13-sheet .slot {
-  background: var(--ss13-section);
-  padding: 5px;
-  border-radius: 3px;
+.ss13-sheet .resources label,
+.ss13-sheet .attr {
+  background: var(--ss13-panel);
+  border: 1px solid var(--ss13-border);
+  border-radius: 6px;
+  padding: 6px;
   text-align: center;
+}
+
+.ss13-sheet label {
+  color: var(--ss13-muted);
+  font-size: 12px;
+}
+
+.ss13-sheet input[type="number"],
+.ss13-sheet select {
+  width: 100%;
+  background: var(--ss13-panel-2);
+  color: var(--ss13-text);
+  border: 1px solid var(--ss13-border);
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+.ss13-sheet .profession {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid var(--ss13-border);
+  border-radius: 6px;
+  background: var(--ss13-panel);
+}
+
+.ss13-sheet .skill-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ss13-sheet .skill-roll,
+.ss13-sheet .save-roll {
+  background: linear-gradient(180deg, #30485f 0%, #243748 100%);
+  color: var(--ss13-text);
+  border: 1px solid #4f7192;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  padding: 6px 8px;
+}
+
+.ss13-sheet .skill-roll:hover,
+.ss13-sheet .save-roll:hover {
+  border-color: var(--ss13-accent);
+  box-shadow: 0 0 0 1px rgba(85, 166, 255, 0.35);
+}
+
+.ss13-sheet .save-roll {
+  margin: 0 6px 6px 0;
+}
+
+.ss13-sheet .slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+}
+
+.ss13-sheet .slot-card {
+  background: var(--ss13-panel);
+  border: 1px solid var(--ss13-border);
+  border-radius: 8px;
+  padding: 8px;
+  text-align: center;
+  min-height: 108px;
+}
+
+.ss13-sheet .slot-icon {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 4px;
+  image-rendering: crisp-edges;
+}
+
+.ss13-sheet .slot-card span {
+  display: block;
+  margin-top: 4px;
+  color: var(--ss13-accent-2);
+  font-size: 11px;
+  word-break: break-word;
 }

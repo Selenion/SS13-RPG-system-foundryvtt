@@ -1,6 +1,6 @@
 <form class="ss13-sheet">
   <header>
-    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+    <h1><input name="name" type="text" value="{{actor.name}}" placeholder="Character Name"/></h1>
     <div class="stats">
       <div class="resources">
         <label>HP: <input name="system.resources.hp.value" type="number" value="{{system.resources.hp.value}}"/></label>
@@ -41,17 +41,20 @@
     {{/if}}
     </div>
     {{#each system.skills as |skill key|}}
-    <input class="skill-rank-select" data-skill="{{key}}" type="number" min="0" max="3" value="{{skill.rank}}"/>
-    <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}}: {{skill.target}}</button>
+    <div class="skill-row">
+      <input class="skill-rank-select" data-skill="{{key}}" type="number" min="0" max="3" value="{{skill.rank}}"/>
+      <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}}: {{skill.target}}</button>
+    </div>
     {{/each}}
   </section>
   <section class="inventory">
-    <h3>Inventory</h3>
-    <div class="slots">
-      {{#each system.inventory.slots as |itemId key|}}
-      <div class="slot {{key}}">
-        <label>{{key}}</label>
-        <span>{{itemId}}</span>
+    <h3>Equipment Slots</h3>
+    <div class="slot-grid">
+      {{#each inventorySlots as |slot|}}
+      <div class="slot-card {{slot.key}}">
+        <img class="slot-icon" src="{{slot.icon}}" alt="{{slot.key}}"/>
+        <label>{{slot.key}}</label>
+        <span>{{slot.itemId}}</span>
       </div>
       {{/each}}
     </div>

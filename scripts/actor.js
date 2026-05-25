@@ -82,6 +82,21 @@ const SKILL_BASES = {
   survival: "phy"
 };
 
+const SLOT_ICONS = {
+  uniform: "systems/ss13/icons/slots/uniform.png",
+  armor: "systems/ss13/icons/slots/suit.png",
+  head: "systems/ss13/icons/slots/head.png",
+  belt: "systems/ss13/icons/slots/belt.png",
+  back: "systems/ss13/icons/slots/back.png",
+  id: "systems/ss13/icons/slots/id.png",
+  left_pocket: "systems/ss13/icons/slots/pocket.png",
+  right_pocket: "systems/ss13/icons/slots/pocket.png",
+  left_hand: "systems/ss13/icons/slots/hand_l.png",
+  right_hand: "systems/ss13/icons/slots/hand_r.png",
+  shoes: "systems/ss13/icons/slots/shoes.png",
+  hands: "systems/ss13/icons/slots/gloves.png"
+};
+
 function applySpecializationBonuses(systemData) {
   if (!systemData?.profession || !systemData?.skills) return;
   if (systemData.profession.id !== "engineer" || Number(systemData.profession.level) !== 1) return;
@@ -155,6 +170,12 @@ export class SS13ActorSheet extends ActorSheet {
         selected: context.system.profession.specialization === id
       }))
     };
+    const slotData = context.system.inventory?.slots ?? {};
+    context.inventorySlots = Object.entries(slotData).map(([key, itemId]) => ({
+      key,
+      itemId,
+      icon: SLOT_ICONS[key] || "systems/ss13/icons/slots/id.png"
+    }));
     return context;
   }
 
