@@ -38,7 +38,7 @@ const ACTOR_DEFAULTS = {
     slots: {
       uniform: "", armor: "", head: "", belt: "", back: "",
       id: "", left_pocket: "", right_pocket: "",
-      left_hand: "", right_hand: "", shoes: ""
+      left_hand: "", right_hand: "", shoes: "", hands: ""
     },
     protection: {
       brute: { value: 0, max: 0 },
@@ -93,7 +93,8 @@ const SLOT_ICONS = {
   right_pocket: "systems/ss13/icons/slots/pocket.png",
   left_hand: "systems/ss13/icons/slots/hand_l.png",
   right_hand: "systems/ss13/icons/slots/hand_r.png",
-  shoes: "systems/ss13/icons/slots/shoes.png"
+  shoes: "systems/ss13/icons/slots/shoes.png",
+  hands: "systems/ss13/icons/slots/gloves.png"
 };
 
 const SLOT_ORDER = [
@@ -107,6 +108,7 @@ const SLOT_ORDER = [
   "right_pocket",
   "left_hand",
   "right_hand",
+  "hands",
   "shoes"
 ];
 

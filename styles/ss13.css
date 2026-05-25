@@ -128,7 +128,7 @@
     ". uniform armor . ."
     ". belt id . ."
     "left_pocket shoes right_pocket . ."
-    "left_hand . right_hand . .";
+    "left_hand hands right_hand . .";
   gap: 10px;
   align-items: stretch;
 }
@@ -154,6 +154,7 @@
 .ss13-sheet .slot-card.right_pocket { grid-area: right_pocket; }
 .ss13-sheet .slot-card.left_hand { grid-area: left_hand; }
 .ss13-sheet .slot-card.right_hand { grid-area: right_hand; }
+.ss13-sheet .slot-card.hands { grid-area: hands; }
 .ss13-sheet .slot-card.shoes { grid-area: shoes; }
 
 .ss13-sheet .slot-icon {
