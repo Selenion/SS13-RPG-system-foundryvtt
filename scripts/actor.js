@@ -60,7 +60,6 @@ const PROFESSION_TEMPLATES = {
   warden: { label: "Warden", skills: { intimidate: 20, guns: 15, melee: 10 } },
   security_officer: { label: "Security Officer", skills: { guns: 20, melee: 15, intimidate: 10 } },
   detective: { label: "Detective", skills: { sleight: 15, guns: 10, persuade: 10 } },
-  prisoner: { label: "Prisoner", skills: { sleight: 10, survival: 10 } },
   station_engineer: { label: "Station Engineer", skills: { engineering: 20, tech: 15, atmosphere: 10 } },
   atmospheric_technician: { label: "Atmospheric Technician", skills: { atmosphere: 25, engineering: 15, tech: 10 } },
   geneticist: { label: "Geneticist", skills: { science: 20, medical: 10, tech: 10 } },
@@ -88,7 +87,6 @@ const PROFESSION_TEMPLATES = {
   blueshield_officer: { label: "Blueshield Officer", skills: { guns: 15, intimidate: 10, melee: 10 } },
   explorer: { label: "Explorer", skills: { survival: 20, science: 10, spacecraft: 10 } },
   bitrunner: { label: "Bitrunner", skills: { tech: 20, science: 10 } },
-  ai: { label: "AI", skills: { tech: 25, science: 15 } },
   cyborg: { label: "Cyborg", skills: { tech: 20, engineering: 10 } }
 };
 
