@@ -122,8 +122,15 @@
 
 .ss13-sheet .slot-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(5, minmax(80px, 1fr));
+  grid-template-areas:
+    ". head back . ."
+    ". uniform armor . ."
+    ". belt id . ."
+    "left_pocket shoes right_pocket . ."
+    "left_hand . right_hand . .";
+  gap: 10px;
+  align-items: stretch;
 }
 
 .ss13-sheet .slot-card {
@@ -136,6 +143,18 @@
   text-align: center;
   min-height: 108px;
 }
+
+.ss13-sheet .slot-card.head { grid-area: head; }
+.ss13-sheet .slot-card.uniform { grid-area: uniform; }
+.ss13-sheet .slot-card.armor { grid-area: armor; }
+.ss13-sheet .slot-card.back { grid-area: back; }
+.ss13-sheet .slot-card.belt { grid-area: belt; }
+.ss13-sheet .slot-card.id { grid-area: id; }
+.ss13-sheet .slot-card.left_pocket { grid-area: left_pocket; }
+.ss13-sheet .slot-card.right_pocket { grid-area: right_pocket; }
+.ss13-sheet .slot-card.left_hand { grid-area: left_hand; }
+.ss13-sheet .slot-card.right_hand { grid-area: right_hand; }
+.ss13-sheet .slot-card.shoes { grid-area: shoes; }
 
 .ss13-sheet .slot-icon {
   position: absolute;

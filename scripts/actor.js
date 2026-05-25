@@ -96,6 +96,20 @@ const SLOT_ICONS = {
   shoes: "systems/ss13/icons/slots/shoes.png"
 };
 
+const SLOT_ORDER = [
+  "head",
+  "uniform",
+  "armor",
+  "back",
+  "belt",
+  "id",
+  "left_pocket",
+  "right_pocket",
+  "left_hand",
+  "right_hand",
+  "shoes"
+];
+
 function applySpecializationBonuses(systemData) {
   if (!systemData?.profession || !systemData?.skills) return;
   if (systemData.profession.id !== "engineer" || Number(systemData.profession.level) !== 1) return;
@@ -170,9 +184,9 @@ export class SS13ActorSheet extends ActorSheet {
       }))
     };
     const slotData = context.system.inventory?.slots ?? {};
-    context.inventorySlots = Object.entries(slotData).map(([key, itemId]) => ({
+    context.inventorySlots = SLOT_ORDER.filter(key => key in slotData).map(key => ({
       key,
-      itemId,
+      itemId: slotData[key],
       icon: SLOT_ICONS[key] || "systems/ss13/icons/slots/id.png"
     }));
     return context;
