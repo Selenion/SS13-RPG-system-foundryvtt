@@ -38,10 +38,11 @@
         <option value="{{spec.id}}" {{#if spec.selected}}selected{{/if}}>{{spec.label}}</option>
         {{/each}}
       </select>
-      {{/if}}
+    {{/if}}
     </div>
     {{#each system.skills as |skill key|}}
-    <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}}: {{skill.value}}</button>
+    <input class="skill-rank-select" data-skill="{{key}}" type="number" min="0" max="3" value="{{skill.rank}}"/>
+    <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}}: {{skill.target}}</button>
     {{/each}}
   </section>
   <section class="inventory">

@@ -60,6 +60,28 @@ const ENGINEER_SPECIALIZATIONS = {
   }
 };
 
+const SKILL_BONUS_BY_RANK = {
+  0: 0,
+  1: 10,
+  2: 15,
+  3: 20
+};
+
+const SKILL_BASES = {
+  melee: "str",
+  guns: "com",
+  engineering: "int",
+  medical: "int",
+  science: "int",
+  tech: "int",
+  intimidate: "com",
+  persuade: "com",
+  sleight: "dex",
+  atmosphere: "int",
+  spacecraft: "int",
+  survival: "phy"
+};
+
 function applySpecializationBonuses(systemData) {
   if (!systemData?.profession || !systemData?.skills) return;
   if (systemData.profession.id !== "engineer" || Number(systemData.profession.level) !== 1) return;
@@ -70,6 +92,21 @@ function applySpecializationBonuses(systemData) {
     if (!systemData.skills[skillKey]) continue;
     const currentValue = Number(systemData.skills[skillKey].value) || 0;
     systemData.skills[skillKey].value = Math.max(currentValue, bonusValue);
+  }
+}
+
+function enrichSkillsForMothership(systemData) {
+  if (!systemData?.skills || !systemData?.attributes || !systemData?.saves) return;
+
+  for (const [skillKey, skillData] of Object.entries(systemData.skills)) {
+    const baseKey = SKILL_BASES[skillKey] || "int";
+    const baseSource = systemData.attributes[baseKey] ?? systemData.saves[baseKey];
+    const baseValue = Number(baseSource?.value) || 0;
+    const rank = Number(skillData.rank ?? 0);
+    const legacyValue = Number(skillData.value) || 0;
+    const bonus = SKILL_BONUS_BY_RANK[rank] ?? legacyValue;
+    skillData.rank = rank;
+    skillData.target = Math.max(baseValue + bonus, legacyValue);
   }
 }
 
@@ -106,6 +143,7 @@ export class SS13ActorSheet extends ActorSheet {
       { inplace: false }
     );
     applySpecializationBonuses(context.system);
+    enrichSkillsForMothership(context.system);
     context.professionConfig = {
       professionOptions: [
         { id: "", label: "None", selected: !context.system.profession.id },
@@ -159,6 +197,15 @@ export class SS13ActorSheet extends ActorSheet {
       currentSystem.profession.specialization = specializationId;
       applySpecializationBonuses(currentSystem);
       await this.actor.update({ system: currentSystem });
+    });
+
+    html.find(".skill-rank-select").change(async ev => {
+      const skillKey = String(ev.currentTarget.dataset.skill || "");
+      const rankValue = Number(ev.currentTarget.value || 0);
+      if (!skillKey) return;
+      await this.actor.update({
+        [`system.skills.${skillKey}.rank`]: rankValue
+      });
     });
   }
 }
