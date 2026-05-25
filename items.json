@@ -139,7 +139,12 @@
       "img": "icons/equipment/chest/shirt-simple-grey.webp",
       "system": {
         "type": "uniform",
-        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "protection": {
+          "brute": 1,
+          "burn": 0,
+          "toxin": 0,
+          "radiation": 0
+        },
         "slot": "uniform"
       }
     },
@@ -150,7 +155,12 @@
       "img": "icons/equipment/chest/chest-plate.webp",
       "system": {
         "type": "armor",
-        "protection": {"brute": 3, "burn": 2, "toxin": 0, "radiation": 0},
+        "protection": {
+          "brute": 3,
+          "burn": 2,
+          "toxin": 0,
+          "radiation": 0
+        },
         "slot": "armor"
       }
     },
@@ -160,7 +170,10 @@
       "type": "id",
       "img": "icons/items/cards/card-blank.webp",
       "system": {
-        "access": ["common", "service"],
+        "access": [
+          "common",
+          "service"
+        ],
         "slot": "id"
       }
     },
@@ -170,7 +183,11 @@
       "type": "id",
       "img": "icons/items/cards/card-blank.webp",
       "system": {
-        "access": ["security", "brig", "armory"],
+        "access": [
+          "security",
+          "brig",
+          "armory"
+        ],
         "slot": "id"
       }
     },
@@ -180,7 +197,11 @@
       "type": "id",
       "img": "icons/items/cards/card-blank.webp",
       "system": {
-        "access": ["captain", "command", "all"],
+        "access": [
+          "captain",
+          "command",
+          "all"
+        ],
         "slot": "id"
       }
     },
@@ -191,7 +212,12 @@
       "img": "icons/equipment/chest/shirt-simple-orange.webp",
       "system": {
         "type": "uniform",
-        "protection": {"brute": 1, "burn": 1, "toxin": 0, "radiation": 0},
+        "protection": {
+          "brute": 1,
+          "burn": 1,
+          "toxin": 0,
+          "radiation": 0
+        },
         "slot": "uniform"
       }
     },
@@ -202,7 +228,12 @@
       "img": "icons/equipment/chest/shirt-simple-teal.webp",
       "system": {
         "type": "uniform",
-        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "protection": {
+          "brute": 1,
+          "burn": 0,
+          "toxin": 0,
+          "radiation": 0
+        },
         "slot": "uniform"
       }
     },
@@ -213,7 +244,12 @@
       "img": "icons/equipment/chest/shirt-simple-purple.webp",
       "system": {
         "type": "uniform",
-        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "protection": {
+          "brute": 1,
+          "burn": 0,
+          "toxin": 0,
+          "radiation": 0
+        },
         "slot": "uniform"
       }
     },
@@ -224,7 +260,12 @@
       "img": "icons/equipment/head/hat-helmet.webp",
       "system": {
         "type": "head",
-        "protection": {"brute": 2, "burn": 1, "toxin": 0, "radiation": 0},
+        "protection": {
+          "brute": 2,
+          "burn": 1,
+          "toxin": 0,
+          "radiation": 0
+        },
         "slot": "head"
       }
     },
@@ -235,7 +276,12 @@
       "img": "icons/equipment/hands/gloves-fingerless.webp",
       "system": {
         "type": "hands",
-        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "protection": {
+          "brute": 1,
+          "burn": 0,
+          "toxin": 0,
+          "radiation": 0
+        },
         "slot": "hands"
       }
     },
@@ -246,7 +292,12 @@
       "img": "icons/equipment/feet/shoes-boots.webp",
       "system": {
         "type": "shoes",
-        "protection": {"brute": 2, "burn": 1, "toxin": 0, "radiation": 0},
+        "protection": {
+          "brute": 2,
+          "burn": 1,
+          "toxin": 0,
+          "radiation": 0
+        },
         "slot": "shoes"
       }
     },
@@ -257,7 +308,12 @@
       "img": "icons/equipment/feet/shoes-sneakers-blue.webp",
       "system": {
         "type": "shoes",
-        "protection": {"brute": 1, "burn": 0, "toxin": 0, "radiation": 0},
+        "protection": {
+          "brute": 1,
+          "burn": 0,
+          "toxin": 0,
+          "radiation": 0
+        },
         "slot": "shoes"
       }
     },
@@ -330,7 +386,7 @@
         "slot": "right_hand"
       }
     },
-{
+    {
       "id": "pda",
       "name": "PDA",
       "type": "tool",
@@ -438,6 +494,664 @@
         "type": "storage",
         "capacity": 15,
         "slot": "back"
+      }
+    },
+    {
+      "id": "screwdriver",
+      "name": "Screwdriver",
+      "type": "tool",
+      "img": "icons/tools/handheld/screwdriver-flathead-red.webp",
+      "system": {
+        "type": "repair",
+        "skill": "engineering",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "crowbar",
+      "name": "Crowbar",
+      "type": "tool",
+      "img": "icons/tools/handheld/crowbar-red.webp",
+      "system": {
+        "type": "pry",
+        "skill": "engineering",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "wirecutters",
+      "name": "Wirecutters",
+      "type": "tool",
+      "img": "icons/tools/handheld/clippers.webp",
+      "system": {
+        "type": "repair",
+        "skill": "engineering",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "welding_tool",
+      "name": "Welding Tool",
+      "type": "tool",
+      "img": "icons/tools/handheld/torch-blue.webp",
+      "system": {
+        "type": "repair",
+        "skill": "engineering",
+        "damage": "1d6",
+        "damageType": "burn",
+        "fuel": 20,
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "toolbox_mechanical",
+      "name": "Mechanical Toolbox",
+      "type": "equipment",
+      "img": "icons/containers/chest/chest-reinforced-steel.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 8,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "utility_belt",
+      "name": "Utility Belt",
+      "type": "equipment",
+      "img": "icons/equipment/waist/belt-buckle-square.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 7,
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "insulated_gloves",
+      "name": "Insulated Gloves",
+      "type": "equipment",
+      "img": "icons/equipment/hands/gloves-leather-brown.webp",
+      "system": {
+        "type": "hands",
+        "protection": {
+          "brute": 0,
+          "burn": 2,
+          "toxin": 0,
+          "radiation": 0
+        },
+        "slot": "hands"
+      }
+    },
+    {
+      "id": "hard_hat",
+      "name": "Hard Hat",
+      "type": "equipment",
+      "img": "icons/equipment/head/helm-barbute.webp",
+      "system": {
+        "type": "head",
+        "protection": {
+          "brute": 1,
+          "burn": 0,
+          "toxin": 0,
+          "radiation": 0
+        },
+        "slot": "head"
+      }
+    },
+    {
+      "id": "meson_scanner",
+      "name": "Meson Scanner",
+      "type": "equipment",
+      "img": "icons/equipment/eyes/goggles-lenses-green.webp",
+      "system": {
+        "type": "scanner",
+        "skill": "engineering",
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "fire_extinguisher",
+      "name": "Fire Extinguisher",
+      "type": "tool",
+      "img": "icons/tools/smithing/crucible.webp",
+      "system": {
+        "type": "emergency",
+        "effect": "extinguish",
+        "uses": 5,
+        "slot": "left_hand"
+      }
+    },
+    {
+      "id": "rapid_cable_layer",
+      "name": "Rapid Cable Layer",
+      "type": "tool",
+      "img": "icons/tools/smithing/tongs.webp",
+      "system": {
+        "type": "repair",
+        "skill": "engineering",
+        "amount": 30,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "defibrillator",
+      "name": "Defibrillator",
+      "type": "tool",
+      "img": "icons/magic/lightning/bolt-strike-blue.webp",
+      "system": {
+        "type": "revive",
+        "skill": "medical",
+        "uses": 3,
+        "slot": "back"
+      }
+    },
+    {
+      "id": "syringe",
+      "name": "Syringe",
+      "type": "tool",
+      "img": "icons/commodities/biological/syringe-red.webp",
+      "system": {
+        "type": "inject",
+        "skill": "medical",
+        "uses": 1,
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "medipen",
+      "name": "Medipen",
+      "type": "tool",
+      "img": "icons/commodities/biological/syringe-green.webp",
+      "system": {
+        "type": "heal",
+        "skill": "medical",
+        "uses": 1,
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "brute_patch",
+      "name": "Brute Patch",
+      "type": "tool",
+      "img": "icons/medical/bandages/bandage-plain.webp",
+      "system": {
+        "type": "heal",
+        "skill": "medical",
+        "effect": "brute",
+        "uses": 1,
+        "slot": "right_pocket"
+      }
+    },
+    {
+      "id": "burn_patch",
+      "name": "Burn Patch",
+      "type": "tool",
+      "img": "icons/medical/bandages/bandage-blood-red.webp",
+      "system": {
+        "type": "heal",
+        "skill": "medical",
+        "effect": "burn",
+        "uses": 1,
+        "slot": "right_pocket"
+      }
+    },
+    {
+      "id": "first_aid_kit",
+      "name": "First Aid Kit",
+      "type": "equipment",
+      "img": "icons/containers/bags/pack-leather-red.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 8,
+        "slot": "left_hand"
+      }
+    },
+    {
+      "id": "medical_belt",
+      "name": "Medical Belt",
+      "type": "equipment",
+      "img": "icons/equipment/waist/belt-pouch-red.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 7,
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "medical_glasses_hud",
+      "name": "Medical HUD Glasses",
+      "type": "equipment",
+      "img": "icons/equipment/eyes/goggles-lenses-blue.webp",
+      "system": {
+        "type": "scanner",
+        "skill": "medical",
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "body_bag",
+      "name": "Body Bag",
+      "type": "tool",
+      "img": "icons/sundries/survival/bedroll-grey.webp",
+      "system": {
+        "type": "container",
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "security_belt",
+      "name": "Security Belt",
+      "type": "equipment",
+      "img": "icons/equipment/waist/belt-thick-buckle-steel.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 7,
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "pepper_spray",
+      "name": "Pepper Spray",
+      "type": "tool",
+      "img": "icons/consumables/potions/bottle-round-corked-yellow.webp",
+      "system": {
+        "type": "control",
+        "effect": "blind",
+        "uses": 5,
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "seclite",
+      "name": "Seclite",
+      "type": "tool",
+      "img": "icons/sundries/lights/lantern-bullseye-signal.webp",
+      "system": {
+        "type": "light",
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "forensic_scanner",
+      "name": "Forensic Scanner",
+      "type": "tool",
+      "img": "icons/tools/scribal/magnifying-glass.webp",
+      "system": {
+        "type": "scan",
+        "skill": "sleight",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "evidence_bag",
+      "name": "Evidence Bag",
+      "type": "tool",
+      "img": "icons/containers/bags/pouch-leather-tan.webp",
+      "system": {
+        "type": "container",
+        "slot": "right_pocket"
+      }
+    },
+    {
+      "id": "security_sunglasses",
+      "name": "Security HUD Sunglasses",
+      "type": "equipment",
+      "img": "icons/equipment/eyes/goggles-lenses-red.webp",
+      "system": {
+        "type": "scanner",
+        "skill": "intimidate",
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "combat_knife",
+      "name": "Combat Knife",
+      "type": "weapon",
+      "img": "icons/weapons/daggers/dagger-steel.webp",
+      "system": {
+        "type": "melee",
+        "damage": "1d8",
+        "damageType": "physical",
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "energy_gun",
+      "name": "Energy Gun",
+      "type": "weapon",
+      "img": "icons/weapons/guns/gun-energy-pistol.webp",
+      "system": {
+        "type": "range",
+        "damage": "2d8",
+        "damageType": "burn",
+        "range": 20,
+        "ammo": "cells",
+        "shots": 10,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "science_goggles",
+      "name": "Science Goggles",
+      "type": "equipment",
+      "img": "icons/equipment/eyes/goggles-lenses-purple.webp",
+      "system": {
+        "type": "scanner",
+        "skill": "science",
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "analyzer",
+      "name": "Analyzer",
+      "type": "tool",
+      "img": "icons/tools/scribal/magnifying-glass.webp",
+      "system": {
+        "type": "scan",
+        "skill": "science",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "beaker",
+      "name": "Beaker",
+      "type": "tool",
+      "img": "icons/consumables/potions/bottle-round-empty.webp",
+      "system": {
+        "type": "chemistry",
+        "skill": "science",
+        "amount": 50,
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "large_beaker",
+      "name": "Large Beaker",
+      "type": "tool",
+      "img": "icons/consumables/potions/bottle-round-empty-glass.webp",
+      "system": {
+        "type": "chemistry",
+        "skill": "science",
+        "amount": 100,
+        "slot": "right_pocket"
+      }
+    },
+    {
+      "id": "dropper",
+      "name": "Dropper",
+      "type": "tool",
+      "img": "icons/tools/laboratory/dropper.webp",
+      "system": {
+        "type": "chemistry",
+        "skill": "science",
+        "amount": 5,
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "plant_analyzer",
+      "name": "Plant Analyzer",
+      "type": "tool",
+      "img": "icons/tools/scribal/magnifying-glass.webp",
+      "system": {
+        "type": "scan",
+        "skill": "science",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "mining_scanner",
+      "name": "Mining Scanner",
+      "type": "tool",
+      "img": "icons/tools/scribal/magnifying-glass.webp",
+      "system": {
+        "type": "scan",
+        "skill": "survival",
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "kinetic_accelerator",
+      "name": "Kinetic Accelerator",
+      "type": "weapon",
+      "img": "icons/weapons/guns/gun-blunderbuss.webp",
+      "system": {
+        "type": "range",
+        "damage": "2d8",
+        "damageType": "physical",
+        "range": 15,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "mining_pickaxe",
+      "name": "Pickaxe",
+      "type": "tool",
+      "img": "icons/tools/hand/pickaxe-steel-white.webp",
+      "system": {
+        "type": "mining",
+        "skill": "survival",
+        "damage": "1d8",
+        "damageType": "physical",
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "ore_bag",
+      "name": "Ore Bag",
+      "type": "equipment",
+      "img": "icons/containers/bags/sack-simple-brown.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 20,
+        "slot": "belt"
+      }
+    },
+    {
+      "id": "cargo_headset",
+      "name": "Cargo Headset",
+      "type": "equipment",
+      "img": "icons/items/tools/radio.webp",
+      "system": {
+        "type": "radio",
+        "channel": "cargo",
+        "slot": "ears"
+      }
+    },
+    {
+      "id": "engineering_headset",
+      "name": "Engineering Headset",
+      "type": "equipment",
+      "img": "icons/items/tools/radio.webp",
+      "system": {
+        "type": "radio",
+        "channel": "engineering",
+        "slot": "ears"
+      }
+    },
+    {
+      "id": "medical_headset",
+      "name": "Medical Headset",
+      "type": "equipment",
+      "img": "icons/items/tools/radio.webp",
+      "system": {
+        "type": "radio",
+        "channel": "medical",
+        "slot": "ears"
+      }
+    },
+    {
+      "id": "science_headset",
+      "name": "Science Headset",
+      "type": "equipment",
+      "img": "icons/items/tools/radio.webp",
+      "system": {
+        "type": "radio",
+        "channel": "science",
+        "slot": "ears"
+      }
+    },
+    {
+      "id": "security_headset",
+      "name": "Security Headset",
+      "type": "equipment",
+      "img": "icons/items/tools/radio.webp",
+      "system": {
+        "type": "radio",
+        "channel": "security",
+        "slot": "ears"
+      }
+    },
+    {
+      "id": "command_headset",
+      "name": "Command Headset",
+      "type": "equipment",
+      "img": "icons/items/tools/radio.webp",
+      "system": {
+        "type": "radio",
+        "channel": "command",
+        "slot": "ears"
+      }
+    },
+    {
+      "id": "backpack",
+      "name": "Backpack",
+      "type": "equipment",
+      "img": "icons/containers/bags/backpack-leather-brown.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 20,
+        "slot": "back"
+      }
+    },
+    {
+      "id": "satchel",
+      "name": "Satchel",
+      "type": "equipment",
+      "img": "icons/containers/bags/satchel-leather-brown.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 18,
+        "slot": "back"
+      }
+    },
+    {
+      "id": "duffel_bag",
+      "name": "Duffel Bag",
+      "type": "equipment",
+      "img": "icons/containers/bags/duffel-leather-brown.webp",
+      "system": {
+        "type": "storage",
+        "capacity": 24,
+        "slot": "back"
+      }
+    },
+    {
+      "id": "breath_mask",
+      "name": "Breath Mask",
+      "type": "equipment",
+      "img": "icons/equipment/head/mask-carved-wood-tan.webp",
+      "system": {
+        "type": "mask",
+        "protection": {
+          "brute": 0,
+          "burn": 0,
+          "toxin": 1,
+          "radiation": 0
+        },
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "gas_mask",
+      "name": "Gas Mask",
+      "type": "equipment",
+      "img": "icons/equipment/head/mask-carved-grey.webp",
+      "system": {
+        "type": "mask",
+        "protection": {
+          "brute": 0,
+          "burn": 0,
+          "toxin": 2,
+          "radiation": 0
+        },
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "emergency_oxygen_tank",
+      "name": "Emergency Oxygen Tank",
+      "type": "equipment",
+      "img": "icons/equipment/chest/breastplate-banded-steel.webp",
+      "system": {
+        "type": "oxygen",
+        "amount": 60,
+        "slot": "right_pocket"
+      }
+    },
+    {
+      "id": "janicart_keys",
+      "name": "Janicart Keys",
+      "type": "tool",
+      "img": "icons/sundries/misc/key-steel.webp",
+      "system": {
+        "type": "key",
+        "slot": "left_pocket"
+      }
+    },
+    {
+      "id": "soap",
+      "name": "Soap",
+      "type": "tool",
+      "img": "icons/commodities/materials/slime-white.webp",
+      "system": {
+        "type": "clean",
+        "skill": "survival",
+        "slot": "right_pocket"
+      }
+    },
+    {
+      "id": "spray_bottle",
+      "name": "Spray Bottle",
+      "type": "tool",
+      "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+      "system": {
+        "type": "clean",
+        "uses": 10,
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "botany_hatchet",
+      "name": "Hatchet",
+      "type": "weapon",
+      "img": "icons/weapons/axes/axe-broad.webp",
+      "system": {
+        "type": "melee",
+        "damage": "1d8",
+        "damageType": "physical",
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "rolling_pin",
+      "name": "Rolling Pin",
+      "type": "weapon",
+      "img": "icons/weapons/clubs/club-simple.webp",
+      "system": {
+        "type": "melee",
+        "damage": "1d4",
+        "damageType": "physical",
+        "slot": "right_hand"
+      }
+    },
+    {
+      "id": "tray",
+      "name": "Serving Tray",
+      "type": "tool",
+      "img": "icons/containers/kitchenware/plate.webp",
+      "system": {
+        "type": "service",
+        "slot": "left_hand"
       }
     }
   ]
