@@ -16,8 +16,12 @@
       </div>
     </div>
   </header>
-  <div class="sheet-columns">
-    <div class="sheet-main">
+  <nav class="sheet-tabs tabs" data-group="main">
+    <a class="item" data-tab="stats">Stats</a>
+    <a class="item" data-tab="inventory">Inventory</a>
+  </nav>
+  <section class="sheet-body">
+    <div class="tab" data-group="main" data-tab="stats">
       <section class="saves">
         <h3>Saves</h3>
         {{#each system.saves as |save key|}}
@@ -42,17 +46,19 @@
         {{/each}}
       </section>
     </div>
-    <section class="inventory sheet-side">
-      <h3>Equipment Slots</h3>
-      <div class="slot-grid">
-        {{#each inventorySlots as |slot|}}
-        <div class="slot-card {{slot.key}}">
-          <img class="slot-icon" src="{{slot.icon}}" alt="{{slot.key}}"/>
-          <label>{{slot.key}}</label>
-          <span>{{slot.itemId}}</span>
+    <div class="tab" data-group="main" data-tab="inventory">
+      <section class="inventory">
+        <h3>Equipment Slots</h3>
+        <div class="slot-grid">
+          {{#each inventorySlots as |slot|}}
+          <div class="slot-card {{slot.key}}">
+            <img class="slot-icon" src="{{slot.icon}}" alt="{{slot.key}}"/>
+            <label>{{slot.key}}</label>
+            <span>{{slot.itemId}}</span>
+          </div>
+          {{/each}}
         </div>
-        {{/each}}
-      </div>
-    </section>
-  </div>
+      </section>
+    </div>
+  </section>
 </form>

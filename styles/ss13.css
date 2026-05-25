@@ -19,20 +19,23 @@
   padding: 12px;
 }
 
-.ss13-sheet .sheet-columns {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(340px, 1fr);
-  gap: 12px;
-  align-items: start;
+.ss13-sheet .sheet-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
-.ss13-sheet .sheet-main {
-  display: grid;
-  gap: 10px;
+.ss13-sheet .sheet-tabs .item {
+  padding: 6px 10px;
+  border: 1px solid var(--ss13-border);
+  border-radius: 6px;
+  background: var(--ss13-panel);
+  color: var(--ss13-text);
 }
 
-.ss13-sheet .sheet-side {
-  margin-bottom: 0;
+.ss13-sheet .sheet-tabs .item.active {
+  border-color: var(--ss13-accent);
+  box-shadow: 0 0 0 1px rgba(85, 166, 255, 0.35);
 }
 
 .ss13-sheet header,
