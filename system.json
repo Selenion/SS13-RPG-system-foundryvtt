@@ -1,7 +1,7 @@
 {
   "id": "ss13",
   "title": "Space Station 13 RPG",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
