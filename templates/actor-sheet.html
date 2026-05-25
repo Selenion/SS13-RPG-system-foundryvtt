@@ -16,39 +16,44 @@
       </div>
     </div>
   </header>
-  <section class="saves">
-    <h3>Saves</h3>
-    {{#each system.saves as |save key|}}
-    <button type="button" class="save-roll" data-save="{{key}}">{{save.label}}: {{save.value}}</button>
-    {{/each}}
-  </section>
-  <section class="skills">
-    <h3>Skills</h3>
-    <div class="profession">
-      <label>Profession</label>
-      <select class="profession-select" name="system.profession.id">
-        {{#each professionConfig.professionOptions as |profession|}}
-        <option value="{{profession.id}}" {{#if profession.selected}}selected{{/if}}>{{profession.label}}</option>
+  <div class="sheet-columns">
+    <div class="sheet-main">
+      <section class="saves">
+        <h3>Saves</h3>
+        {{#each system.saves as |save key|}}
+        <button type="button" class="save-roll" data-save="{{key}}">{{save.label}}: {{save.value}}</button>
         {{/each}}
-      </select>
+      </section>
+      <section class="skills">
+        <h3>Skills</h3>
+        <div class="profession">
+          <label>Profession</label>
+          <select class="profession-select" name="system.profession.id">
+            {{#each professionConfig.professionOptions as |profession|}}
+            <option value="{{profession.id}}" {{#if profession.selected}}selected{{/if}}>{{profession.label}}</option>
+            {{/each}}
+          </select>
+        </div>
+        {{#each system.skills as |skill key|}}
+        <div class="skill-row">
+          <input class="skill-rank-select" data-skill="{{key}}" type="number" min="0" max="3" value="{{skill.rank}}"/>
+          <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}}: {{skill.target}}</button>
+        </div>
+        {{/each}}
+      </section>
     </div>
-    {{#each system.skills as |skill key|}}
-    <div class="skill-row">
-      <input class="skill-rank-select" data-skill="{{key}}" type="number" min="0" max="3" value="{{skill.rank}}"/>
-      <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}}: {{skill.target}}</button>
-    </div>
-    {{/each}}
-  </section>
-  <section class="inventory">
-    <h3>Equipment Slots</h3>
-    <div class="slot-grid">
-      {{#each inventorySlots as |slot|}}
-      <div class="slot-card {{slot.key}}">
-        <img class="slot-icon" src="{{slot.icon}}" alt="{{slot.key}}"/>
-        <label>{{slot.key}}</label>
-        <span>{{slot.itemId}}</span>
+    <section class="inventory sheet-side">
+      <h3>Equipment Slots</h3>
+      <div class="slot-grid">
+        {{#each inventorySlots as |slot|}}
+        <div class="slot-card {{slot.key}}">
+          <img class="slot-icon" src="{{slot.icon}}" alt="{{slot.key}}"/>
+          <label>{{slot.key}}</label>
+          <span>{{slot.itemId}}</span>
+        </div>
+        {{/each}}
       </div>
-      {{/each}}
+    </section>
     </div>
-  </section>
+  </div>
 </form>
