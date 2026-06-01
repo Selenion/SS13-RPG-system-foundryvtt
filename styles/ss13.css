@@ -195,7 +195,7 @@
   border-radius: 8px;
   padding: 8px;
   text-align: center;
-  min-height: 108px;
+  min-height: 122px;
 }
 
 .ss13-sheet .slot-card.head { grid-area: head; }
@@ -243,9 +243,9 @@
   position: relative;
   z-index: 1;
   display: block;
-  width: 36px;
-  height: 36px;
-  margin: 6px auto 0;
+  width: 52px;
+  height: 52px;
+  margin: 5px auto 0;
   object-fit: contain;
   image-rendering: crisp-edges;
   cursor: pointer;
@@ -266,15 +266,18 @@
 
 .ss13-sheet .slot-item {
   width: 100%;
-  margin-top: 8px;
-  padding: 5px;
+  margin-top: 5px;
+  padding: 3px 5px;
   color: var(--ss13-accent-2);
+  font-size: 11px;
+  line-height: 1.15;
 }
 
 .ss13-sheet .unequip-slot {
-  margin-top: 6px;
-  padding: 4px 6px;
-  font-size: 11px;
+  margin-top: 4px;
+  padding: 2px 5px;
+  font-size: 10px;
+  line-height: 1.15;
 }
 
 .ss13-sheet .inventory-list {
@@ -284,7 +287,7 @@
 
 .ss13-sheet .inventory-row {
   display: grid;
-  grid-template-columns: 32px minmax(140px, 1fr) 82px 124px 64px;
+  grid-template-columns: 48px minmax(120px, 1fr) 76px 116px 56px;
   gap: 8px;
   align-items: center;
   padding: 6px;
@@ -294,9 +297,10 @@
 }
 
 .ss13-sheet .inventory-row img {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
+  image-rendering: crisp-edges;
 }
 
 .ss13-sheet .inventory-row span,
@@ -307,7 +311,9 @@
 
 .ss13-sheet .inventory-name,
 .ss13-sheet .equip-item {
-  padding: 5px 7px;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 1.15;
 }
 
 .ss13.item-sheet .window-content {
@@ -402,6 +408,7 @@
 .ss13-import-items {
   display: grid;
   gap: 12px;
+  color: var(--ss13-text);
 }
 
 .ss13-import-items .import-summary {
@@ -413,9 +420,17 @@
 
 .ss13-import-items .import-summary p {
   margin: 4px 0;
+  color: var(--ss13-text);
 }
 
 .ss13-import-items .import-actions {
   display: flex;
   gap: 8px;
+}
+
+.ss13-import-items button {
+  color: var(--ss13-text);
+  background: linear-gradient(180deg, #30485f 0%, #243748 100%);
+  border: 1px solid #4f7192;
+  border-radius: 5px;
 }

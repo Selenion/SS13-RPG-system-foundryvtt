@@ -266,6 +266,7 @@ class SS13ImportItemsConfig extends FormApplication {
       title: "SS13 Base Items",
       id: "ss13-import-items",
       template: "systems/ss13/templates/import-items.html",
+      classes: ["ss13", "sheet", "import-items"],
       width: 420,
       height: "auto",
       closeOnSubmit: false
