@@ -44,7 +44,12 @@
         {{#each system.skills as |skill key|}}
         <div class="skill-row">
           <input class="skill-rank-select" data-skill="{{key}}" type="number" min="0" max="3" value="{{skill.rank}}"/>
-          <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}}: {{skill.target}}</button>
+          <select class="skill-attribute-select" data-skill="{{key}}">
+            {{#each ../attributeOptions as |attribute|}}
+            <option value="{{attribute.id}}">{{attribute.label}}</option>
+            {{/each}}
+          </select>
+          <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}} +{{skill.bonus}}</button>
         </div>
         {{/each}}
       </section>

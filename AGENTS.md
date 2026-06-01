@@ -1,36 +1,42 @@
-# ss13-system - FoundryVTT Module
+# ss13-system Contributor Guide
 
-A Space Station 13 RPG system for FoundryVTT, based on Mothership RPG rules.
+## Overview
 
-## Status: Ready for Testing
-- **38 items** in items.json (weapons, tools, equipment, ammo)
-- **Dice rolls** working (d100 skill/save checks)
-- **Character sheet** with inventory display
-- **CSS styling** with SS13 dark theme
+`ss13-system` is a Foundry VTT game system for Space Station 13-inspired tabletop play, using Mothership-style d100 checks. It is a pure Foundry system: no build step, no package manager, and no generated bundle. Edit JSON, HTML, CSS, and ES modules directly, then reload Foundry.
 
-## Quick Start
-- **Manual installation**: Copy `ss13-system` folder to Foundry `Data/systems/`
-- **Development**: Edit files and reload in Foundry
-- **No build step** - pure JSON/HTML/CSS/JS system
+## Project Structure
 
-## Structure
-- `system.json` - System manifest
-- `template.json` - Actor data template with inventory slots
-- `items.json` - 38 base items (weapons, tools, equipment, ammo)
-- `scripts/` - ES6 modules (actor.js, item.js, ss13.js)
-- `templates/` - Handlebars HTML templates
-- `styles/` - CSS styling
+- `system.json` - Foundry system manifest. Currently loads `module.js` and `styles/ss13.css`.
+- `module.js` - system initialization, sheet registration, actor/item defaults, and global d100 roll handler.
+- `template.json` - actor and item data schemas.
+- `items.json` - source data for 94 base items. Import in Foundry with `game.ss13.importBaseItems()`.
+- `scripts/actor.js` - actor document class, character sheet, professions, skill ranks, and equipment slot display.
+- `scripts/item.js` - item sheet setup, type flags, slot options, skill options, and extra field discovery.
+- `scripts/ss13.js` - damage helper imported by `module.js`.
+- `scripts/validate-data.mjs` - local data consistency check for JSON, skills, items, and profession references.
+- `templates/` - Handlebars actor and item sheets.
+- `styles/ss13.css` - SS13-themed sheet styling.
+- `lang/ru.json`, `lang/en.json` - localization strings. Templates currently contain mostly hardcoded English text.
+- `icons/slots/` - equipment slot icons used by the actor sheet.
 
-## Icons
-Using Foundry VTT default system icons:
-- `icons/weapons/` - Weapons (guns, melee)  
-- `icons/equipment/` - Armor, uniforms, gear
-- `icons/tools/` - Tools, medical items
+## Reference Documents
 
-Custom icons: Place PNG files in `icons/items/`
+Design notes live one level up in `SS13module/`: `диздок.md`, `система_персонажей.md`, `профессии.md`, and `предметы_mvp.md`. Treat them as product/design references, not guaranteed implementation truth. When behavior differs, update either the code or the docs explicitly.
 
-## Dice Rolls
-- **Skill checks**: d100 <= skill value (success)
-- **Saves**: d100 <= save value (success)
-- **Damage**: Weapon dice - armor protection
-- Click skill/save buttons on character sheet to roll
+`SS13module/BandaStation/` is the reference implementation and asset source for the original Space Station 13 server. Use it to verify job names, item behavior, icon/audio resources, terminology, and gameplay expectations before inventing new SS13-specific content. Do not copy large chunks blindly; adapt mechanics and assets to this Foundry system's simpler tabletop model.
+
+## Development Workflow
+
+Install by copying this folder to Foundry `Data/systems/ss13/`, then create or reload a world using system id `ss13`. After edits, reload Foundry or the world. Import base items from the browser console as a GM with `await game.ss13.importBaseItems()`. Validate JSON and skill references before testing:
+
+```powershell
+node scripts/validate-data.mjs
+```
+
+## Coding Rules
+
+Use two-space indentation in JSON and JavaScript, matching the existing files. Keep Foundry-facing code as browser-compatible ES modules. Do not use Node-only APIs in loaded system scripts. Keep visible text localizable when touching templates, and update both language files.
+
+## Testing Checklist
+
+Before handoff, verify the system loads in Foundry without console errors, actor and item sheets open, profession selection updates skill ranks, skill/save buttons produce chat rolls, and equipment slot icons render. For item work, confirm imported weapons, tools, equipment, ID cards, ammo, and grenades expose editable fields and that item skills match `template.json`.

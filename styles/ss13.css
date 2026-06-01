@@ -137,7 +137,7 @@
 
 .ss13-sheet .skill-row {
   display: grid;
-  grid-template-columns: 56px 1fr;
+  grid-template-columns: 56px 82px 1fr;
   gap: 8px;
   margin-bottom: 6px;
 }
@@ -225,4 +225,93 @@
   color: var(--ss13-accent-2);
   font-size: 11px;
   word-break: break-word;
+}
+
+.ss13.item-sheet .window-content {
+  background: var(--ss13-bg);
+}
+
+.ss13-item-sheet {
+  color: var(--ss13-text);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  padding: 12px;
+}
+
+.ss13-item-sheet .item-header {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ss13-item-sheet .item-image {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--ss13-border);
+  border-radius: 8px;
+  background: var(--ss13-panel);
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.ss13-item-sheet .item-title {
+  display: grid;
+  gap: 8px;
+}
+
+.ss13-item-sheet .item-section {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--ss13-border);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.08));
+}
+
+.ss13-item-sheet h3 {
+  margin: 0 0 8px;
+  color: var(--ss13-accent);
+}
+
+.ss13-item-sheet label {
+  display: grid;
+  gap: 4px;
+  color: var(--ss13-muted);
+  font-size: 12px;
+}
+
+.ss13-item-sheet input,
+.ss13-item-sheet select,
+.ss13-item-sheet textarea {
+  width: 100%;
+  color: var(--ss13-text);
+  background: var(--ss13-panel-2);
+  border: 1px solid var(--ss13-border);
+  border-radius: 4px;
+  padding: 5px 7px;
+}
+
+.ss13-item-sheet textarea {
+  resize: vertical;
+}
+
+.ss13-item-sheet .field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ss13-item-sheet .protection-grid {
+  margin-top: 8px;
+}
+
+.ss13-item-sheet .check-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.ss13-item-sheet .check-row input {
+  width: auto;
 }

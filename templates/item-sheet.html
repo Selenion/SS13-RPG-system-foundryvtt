@@ -1,19 +1,128 @@
-<form class="ss13-item">
-  <header>
-    <h1><input name="name" type="text" value="{{item.name}}" placeholder="Item Name"/></h1>
-    <img src="{{item.img}}" data-edit="img"/>
+<form class="ss13-item-sheet">
+  <header class="item-header">
+    <img class="item-image" src="{{item.img}}" data-edit="img" alt="{{item.name}}"/>
+    <div class="item-title">
+      <input name="name" type="text" value="{{item.name}}" placeholder="Item Name"/>
+      <label>
+        Type
+        <select name="type">
+          {{#each itemTypes as |type|}}
+          <option value="{{type.value}}" {{#if type.selected}}selected{{/if}}>{{type.label}}</option>
+          {{/each}}
+        </select>
+      </label>
+    </div>
   </header>
-  <section class="item-type">
-    <label>Type: {{item.type}}</label>
+
+  <section class="item-section">
+    <h3>Basics</h3>
+    <div class="field-grid">
+      <label>
+        Slot
+        <select name="system.slot">
+          {{#each slotOptions as |slot|}}
+          <option value="{{slot.value}}" {{#if slot.selected}}selected{{/if}}>{{slot.label}}</option>
+          {{/each}}
+        </select>
+      </label>
+      <label>
+        Skill
+        <select name="system.skill">
+          {{#each skillOptions as |skill|}}
+          <option value="{{skill.value}}" {{#if skill.selected}}selected{{/if}}>{{skill.label}}</option>
+          {{/each}}
+        </select>
+      </label>
+    </div>
   </section>
-  {{#if system.damage}}
-  <section class="damage">
-    <label>Damage: {{system.damage}}</label>
+
+  {{#if isWeapon}}
+  <section class="item-section">
+    <h3>Weapon</h3>
+    <div class="field-grid">
+      <label>Mode <input name="system.type" type="text" value="{{system.type}}" placeholder="melee/range"/></label>
+      <label>Damage <input name="system.damage" type="text" value="{{system.damage}}" placeholder="1d10"/></label>
+      <label>Damage Type <input name="system.damageType" type="text" value="{{system.damageType}}"/></label>
+      <label>Range <input name="system.range" type="number" value="{{system.range}}"/></label>
+      <label>Ammo <input name="system.ammo" type="text" value="{{system.ammo}}"/></label>
+      <label>Shots <input name="system.shots" type="number" value="{{system.shots}}"/></label>
+    </div>
+    <label class="check-row">
+      <input name="system.reflect" type="checkbox" {{#if system.reflect}}checked{{/if}}/>
+      Reflects energy projectiles
+    </label>
   </section>
   {{/if}}
-  {{#if system.slot}}
-  <section class="slot">
-    <label>Slot: {{system.slot}}</label>
+
+  {{#if isTool}}
+  <section class="item-section">
+    <h3>Tool</h3>
+    <div class="field-grid">
+      <label>Mode <input name="system.type" type="text" value="{{system.type}}"/></label>
+      <label>Effect <input name="system.effect" type="text" value="{{system.effect}}"/></label>
+      <label>Uses <input name="system.uses" type="number" value="{{system.uses}}"/></label>
+      <label>Amount <input name="system.amount" type="number" value="{{system.amount}}"/></label>
+      <label>Damage <input name="system.damage" type="text" value="{{system.damage}}"/></label>
+      <label>Damage Type <input name="system.damageType" type="text" value="{{system.damageType}}"/></label>
+    </div>
+  </section>
+  {{/if}}
+
+  {{#if isEquipment}}
+  <section class="item-section">
+    <h3>Equipment</h3>
+    <div class="field-grid">
+      <label>Mode <input name="system.type" type="text" value="{{system.type}}"/></label>
+      <label>Amount <input name="system.amount" type="number" value="{{system.amount}}"/></label>
+    </div>
+    <div class="field-grid protection-grid">
+      <label>Brute <input name="system.protection.brute" type="number" value="{{system.protection.brute}}"/></label>
+      <label>Burn <input name="system.protection.burn" type="number" value="{{system.protection.burn}}"/></label>
+      <label>Toxin <input name="system.protection.toxin" type="number" value="{{system.protection.toxin}}"/></label>
+      <label>Radiation <input name="system.protection.radiation" type="number" value="{{system.protection.radiation}}"/></label>
+    </div>
+  </section>
+  {{/if}}
+
+  {{#if isID}}
+  <section class="item-section">
+    <h3>ID</h3>
+    <label>
+      Access
+      <textarea name="system.access" rows="3">{{system.access}}</textarea>
+    </label>
+  </section>
+  {{/if}}
+
+  {{#if isAmmo}}
+  <section class="item-section">
+    <h3>Ammo</h3>
+    <div class="field-grid">
+      <label>Ammo Type <input name="system.type" type="text" value="{{system.type}}"/></label>
+      <label>Amount <input name="system.amount" type="number" value="{{system.amount}}"/></label>
+      <label>Count <input name="system.count" type="number" value="{{system.count}}"/></label>
+    </div>
+  </section>
+  {{/if}}
+
+  {{#if isGrenade}}
+  <section class="item-section">
+    <h3>Grenade</h3>
+    <div class="field-grid">
+      <label>Effect <input name="system.effect" type="text" value="{{system.effect}}"/></label>
+      <label>Duration <input name="system.duration" type="text" value="{{system.duration}}"/></label>
+    </div>
+  </section>
+  {{/if}}
+
+  {{#if extraFields.length}}
+  <section class="item-section">
+    <h3>Extra Data</h3>
+    <div class="field-grid">
+      {{#each extraFields as |field|}}
+      <label>{{field.key}} <input name="system.{{field.key}}" type="text" value="{{field.value}}"/></label>
+      {{/each}}
+    </div>
   </section>
   {{/if}}
 </form>

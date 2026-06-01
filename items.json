@@ -106,7 +106,7 @@
       "img": "icons/tools/misc/mining-pick.webp",
       "system": {
         "type": "universal",
-        "skill": "tech",
+        "skill": "hacking",
         "slot": "belt"
       }
     },
@@ -370,7 +370,7 @@
       "img": "icons/tools/misc/mop.webp",
       "system": {
         "type": "clean",
-        "skill": "civilian",
+        "skill": "service",
         "slot": "right_hand"
       }
     },
