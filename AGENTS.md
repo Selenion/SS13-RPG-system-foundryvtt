@@ -9,15 +9,17 @@
 - `system.json` - Foundry system manifest. Currently loads `module.js` and `styles/ss13.css`.
 - `module.js` - system initialization, sheet registration, actor/item defaults, and global d100 roll handler.
 - `template.json` - actor and item data schemas.
-- `items.json` - source data for 94 base items. Import in Foundry via Configure Settings -> SS13 Base Items -> Import Base Items.
+- `items.json` - source data for 94 base items. Create/update the world compendium in Foundry via Configure Settings -> SS13 Base Items.
 - `scripts/actor.js` - actor document class, character sheet, professions, skill ranks, and equipment slot display.
 - `scripts/item.js` - item sheet setup, type flags, slot options, skill options, and extra field discovery.
 - `scripts/ss13.js` - damage helper imported by `module.js`.
 - `scripts/validate-data.mjs` - local data consistency check for JSON, skills, items, and profession references.
+- `scripts/extract-bandastation-icons.mjs` - regenerates item PNGs from `../BandaStation/icons/obj/**/*.dmi`.
 - `templates/` - Handlebars actor, item, and import utility sheets.
 - `styles/ss13.css` - SS13-themed sheet styling.
 - `lang/ru.json`, `lang/en.json` - localization strings. Templates currently contain mostly hardcoded English text.
 - `icons/slots/` - equipment slot icons used by the actor sheet.
+- `icons/items/bandastation/` - generated 32x32 item icons extracted from BandaStation DMI sprites.
 
 ## Reference Documents
 
@@ -31,6 +33,12 @@ Install by copying this folder to Foundry `Data/systems/ss13/`, then create or r
 
 ```powershell
 node scripts/validate-data.mjs
+```
+
+When changing base item icons, keep `SS13module/BandaStation/` next to this repo and regenerate assets:
+
+```powershell
+node scripts/extract-bandastation-icons.mjs
 ```
 
 ## Coding Rules

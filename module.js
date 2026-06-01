@@ -131,6 +131,8 @@ const DEFAULT_ACTOR_DATA = {
 
 // Global roll functions for template clicks
 const SKILL_BONUS_BY_RANK = { 0: 0, 1: 10, 2: 15, 3: 20 };
+const BASE_ITEMS_PACK_NAME = "ss13-base-items";
+const BASE_ITEMS_PACK_LABEL = "SS13 Base Items";
 
 async function loadBaseItems() {
   const response = await fetch("systems/ss13/items.json");
@@ -139,6 +141,20 @@ async function loadBaseItems() {
   }
   const data = await response.json();
   return data.items ?? [];
+}
+
+function getBaseItemDocumentData(sourceItem) {
+  return {
+    name: sourceItem.name,
+    type: sourceItem.type,
+    img: sourceItem.img,
+    system: foundry.utils.deepClone(sourceItem.system ?? {}),
+    flags: {
+      ss13: {
+        sourceId: sourceItem.id
+      }
+    }
+  };
 }
 
 async function importBaseItems({ updateExisting = false } = {}) {
@@ -159,17 +175,7 @@ async function importBaseItems({ updateExisting = false } = {}) {
 
   for (const sourceItem of sourceItems) {
     const existing = existingBySourceId.get(sourceItem.id);
-    const itemData = {
-      name: sourceItem.name,
-      type: sourceItem.type,
-      img: sourceItem.img,
-      system: foundry.utils.deepClone(sourceItem.system ?? {}),
-      flags: {
-        ss13: {
-          sourceId: sourceItem.id
-        }
-      }
-    };
+    const itemData = getBaseItemDocumentData(sourceItem);
 
     if (existing) {
       if (updateExisting) {
@@ -193,6 +199,67 @@ async function importBaseItems({ updateExisting = false } = {}) {
   return result;
 }
 
+function getBaseItemsCompendium() {
+  return game.packs.get(`world.${BASE_ITEMS_PACK_NAME}`) ?? null;
+}
+
+async function getOrCreateBaseItemsCompendium() {
+  const existing = getBaseItemsCompendium();
+  if (existing) return existing;
+
+  return CompendiumCollection.createCompendium({
+    type: "Item",
+    label: BASE_ITEMS_PACK_LABEL,
+    name: BASE_ITEMS_PACK_NAME,
+    package: "world"
+  });
+}
+
+async function syncBaseItemsCompendium({ updateExisting = true } = {}) {
+  if (!game.user?.isGM) {
+    ui.notifications?.warn("Only a GM can create or update the SS13 item compendium.");
+    return {created: 0, updated: 0, skipped: 0};
+  }
+
+  const sourceItems = await loadBaseItems();
+  const pack = await getOrCreateBaseItemsCompendium();
+  const existingDocuments = await pack.getDocuments();
+  const existingBySourceId = new Map(
+    existingDocuments
+      .filter(item => item.getFlag("ss13", "sourceId"))
+      .map(item => [item.getFlag("ss13", "sourceId"), item])
+  );
+
+  const toCreate = [];
+  let updated = 0;
+  let skipped = 0;
+
+  for (const sourceItem of sourceItems) {
+    const existing = existingBySourceId.get(sourceItem.id);
+    const itemData = getBaseItemDocumentData(sourceItem);
+
+    if (existing) {
+      if (updateExisting) {
+        await existing.update(itemData);
+        updated += 1;
+      } else {
+        skipped += 1;
+      }
+      continue;
+    }
+
+    toCreate.push(itemData);
+  }
+
+  if (toCreate.length) {
+    await Item.createDocuments(toCreate, {pack: pack.collection});
+  }
+
+  const result = {created: toCreate.length, updated, skipped};
+  ui.notifications?.info(`SS13 compendium sync: ${result.created} created, ${result.updated} updated, ${result.skipped} skipped.`);
+  return result;
+}
+
 class SS13ImportItemsConfig extends FormApplication {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -213,10 +280,20 @@ class SS13ImportItemsConfig extends FormApplication {
         .map(item => item.getFlag("ss13", "sourceId"))
     );
     const missingCount = sourceItems.filter(item => !existingSourceIds.has(item.id)).length;
+    const pack = getBaseItemsCompendium();
+    let compendiumCount = 0;
+    if (pack) {
+      const index = await pack.getIndex({fields: ["flags.ss13.sourceId"]});
+      const entries = Array.from(index.values ? index.values() : index);
+      compendiumCount = entries.filter(entry => entry.flags?.ss13?.sourceId).length;
+    }
     return {
       totalCount: sourceItems.length,
       importedCount: sourceItems.length - missingCount,
-      missingCount
+      missingCount,
+      compendiumName: pack?.metadata?.label ?? BASE_ITEMS_PACK_LABEL,
+      compendiumCount,
+      compendiumMissingCount: sourceItems.length - compendiumCount
     };
   }
 
@@ -230,6 +307,11 @@ class SS13ImportItemsConfig extends FormApplication {
     html.find("[data-action='update']").click(async ev => {
       ev.preventDefault();
       await importBaseItems({updateExisting: true});
+      this.render();
+    });
+    html.find("[data-action='sync-compendium']").click(async ev => {
+      ev.preventDefault();
+      await syncBaseItemsCompendium({updateExisting: true});
       this.render();
     });
   }
@@ -296,9 +378,9 @@ Hooks.once('init', async function() {
   });
 
   game.settings.registerMenu("ss13", "importBaseItems", {
-    name: "Import Base Items",
-    label: "Open Importer",
-    hint: "Import or update the bundled SS13 base items into this world.",
+    name: "SS13 Base Items",
+    label: "Open",
+    hint: "Create a base item compendium or import bundled SS13 items into this world.",
     icon: "fas fa-box-open",
     type: SS13ImportItemsConfig,
     restricted: true
@@ -308,9 +390,10 @@ Hooks.once('init', async function() {
 Hooks.once("ready", () => {
   game.ss13 = foundry.utils.mergeObject(game.ss13 ?? {}, {
     importBaseItems,
-    loadBaseItems
+    loadBaseItems,
+    syncBaseItemsCompendium
   });
-  console.log("SS13 | Ready. Use game.ss13.importBaseItems() to import base items.");
+  console.log("SS13 | Ready. Use game.ss13.syncBaseItemsCompendium() or the settings menu to create base items.");
 });
 
 // Set default type for new actors and items

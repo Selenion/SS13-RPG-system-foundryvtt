@@ -4,7 +4,7 @@
       "id": "taser",
       "name": "Taser",
       "type": "weapon",
-      "img": "icons/weapons/clubs/club-hammer.webp",
+      "img": "systems/ss13/icons/items/bandastation/taser.png",
       "system": {
         "type": "range",
         "damage": "1d10",
@@ -19,7 +19,7 @@
       "id": "stun_baton",
       "name": "Stun Baton",
       "type": "weapon",
-      "img": "icons/weapons/clubs/club-short.webp",
+      "img": "systems/ss13/icons/items/bandastation/stun_baton.png",
       "system": {
         "type": "melee",
         "damage": "1d8",
@@ -32,7 +32,7 @@
       "id": "flash",
       "name": "Flash",
       "type": "grenade",
-      "img": "icons/weapons/thrown/bomb.webp",
+      "img": "systems/ss13/icons/items/bandastation/flash.png",
       "system": {
         "effect": "blind",
         "duration": "1d4",
@@ -43,7 +43,7 @@
       "id": "handcuffs",
       "name": "Handcuffs",
       "type": "tool",
-      "img": "icons/tools/locks/padlock-closed.webp",
+      "img": "systems/ss13/icons/items/bandastation/handcuffs.png",
       "system": {
         "effect": "restrain",
         "slot": "belt"
@@ -53,7 +53,7 @@
       "id": "emag",
       "name": "Cryptographic Sequencer",
       "type": "tool",
-      "img": "icons/tools/lockpicks/lockpick-set.webp",
+      "img": "systems/ss13/icons/items/bandastation/emag.png",
       "system": {
         "type": "hack",
         "uses": 1,
@@ -64,7 +64,7 @@
       "id": "energy_sword",
       "name": "Energy Sword",
       "type": "weapon",
-      "img": "icons/weapons/swords/sword-energy.webp",
+      "img": "systems/ss13/icons/items/bandastation/energy_sword.png",
       "system": {
         "type": "melee",
         "damage": "2d10",
@@ -77,7 +77,7 @@
       "id": "revolver_357",
       "name": ".357 Revolver",
       "type": "weapon",
-      "img": "icons/weapons/guns/gun-revolver.webp",
+      "img": "systems/ss13/icons/items/bandastation/revolver_357.png",
       "system": {
         "type": "range",
         "damage": "2d10",
@@ -92,7 +92,7 @@
       "id": "wrench",
       "name": "Wrench",
       "type": "tool",
-      "img": "icons/tools/handheld/wrench.webp",
+      "img": "systems/ss13/icons/items/bandastation/wrench.png",
       "system": {
         "type": "repair",
         "skill": "engineering",
@@ -103,7 +103,7 @@
       "id": "multitool",
       "name": "Multitool",
       "type": "tool",
-      "img": "icons/tools/misc/mining-pick.webp",
+      "img": "systems/ss13/icons/items/bandastation/multitool.png",
       "system": {
         "type": "universal",
         "skill": "hacking",
@@ -114,7 +114,7 @@
       "id": "hypospray",
       "name": "Hypospray",
       "type": "tool",
-      "img": "icons/medical/bandages/bandage-plain.webp",
+      "img": "systems/ss13/icons/items/bandastation/hypospray.png",
       "system": {
         "type": "heal",
         "skill": "medical",
@@ -125,7 +125,7 @@
       "id": "oxygen_tank",
       "name": "Oxygen Tank",
       "type": "equipment",
-      "img": "icons/equipment/chest/cuirass-light.webp",
+      "img": "systems/ss13/icons/items/bandastation/oxygen_tank.png",
       "system": {
         "type": "oxygen",
         "amount": 120,
@@ -136,7 +136,7 @@
       "id": "assistant_uniform",
       "name": "Assistant Uniform",
       "type": "equipment",
-      "img": "icons/equipment/chest/shirt-simple-grey.webp",
+      "img": "systems/ss13/icons/items/bandastation/assistant_uniform.png",
       "system": {
         "type": "uniform",
         "protection": {
@@ -152,7 +152,7 @@
       "id": "security_armor",
       "name": "Security Armor",
       "type": "equipment",
-      "img": "icons/equipment/chest/chest-plate.webp",
+      "img": "systems/ss13/icons/items/bandastation/security_armor.png",
       "system": {
         "type": "armor",
         "protection": {
@@ -168,7 +168,7 @@
       "id": "assistant_id",
       "name": "Assistant ID",
       "type": "id",
-      "img": "icons/items/cards/card-blank.webp",
+      "img": "systems/ss13/icons/items/bandastation/assistant_id.png",
       "system": {
         "access": [
           "common",
@@ -181,7 +181,7 @@
       "id": "security_id",
       "name": "Security ID",
       "type": "id",
-      "img": "icons/items/cards/card-blank.webp",
+      "img": "systems/ss13/icons/items/bandastation/security_id.png",
       "system": {
         "access": [
           "security",
@@ -195,7 +195,7 @@
       "id": "captain_id",
       "name": "Captain ID",
       "type": "id",
-      "img": "icons/items/cards/card-blank.webp",
+      "img": "systems/ss13/icons/items/bandastation/captain_id.png",
       "system": {
         "access": [
           "captain",
@@ -209,7 +209,7 @@
       "id": "engineer_uniform",
       "name": "Engineer Uniform",
       "type": "equipment",
-      "img": "icons/equipment/chest/shirt-simple-orange.webp",
+      "img": "systems/ss13/icons/items/bandastation/engineer_uniform.png",
       "system": {
         "type": "uniform",
         "protection": {
@@ -225,7 +225,7 @@
       "id": "medical_uniform",
       "name": "Medical Uniform",
       "type": "equipment",
-      "img": "icons/equipment/chest/shirt-simple-teal.webp",
+      "img": "systems/ss13/icons/items/bandastation/medical_uniform.png",
       "system": {
         "type": "uniform",
         "protection": {
@@ -241,7 +241,7 @@
       "id": "research_uniform",
       "name": "Research Uniform",
       "type": "equipment",
-      "img": "icons/equipment/chest/shirt-simple-purple.webp",
+      "img": "systems/ss13/icons/items/bandastation/research_uniform.png",
       "system": {
         "type": "uniform",
         "protection": {
@@ -257,7 +257,7 @@
       "id": "security_helmet",
       "name": "Security Helmet",
       "type": "equipment",
-      "img": "icons/equipment/head/hat-helmet.webp",
+      "img": "systems/ss13/icons/items/bandastation/security_helmet.png",
       "system": {
         "type": "head",
         "protection": {
@@ -273,7 +273,7 @@
       "id": "security_gloves",
       "name": "Security Gloves",
       "type": "equipment",
-      "img": "icons/equipment/hands/gloves-fingerless.webp",
+      "img": "systems/ss13/icons/items/bandastation/security_gloves.png",
       "system": {
         "type": "hands",
         "protection": {
@@ -289,7 +289,7 @@
       "id": "engineer_boots",
       "name": "Engineer Boots",
       "type": "equipment",
-      "img": "icons/equipment/feet/shoes-boots.webp",
+      "img": "systems/ss13/icons/items/bandastation/engineer_boots.png",
       "system": {
         "type": "shoes",
         "protection": {
@@ -305,7 +305,7 @@
       "id": "medical_boots",
       "name": "Medical Boots",
       "type": "equipment",
-      "img": "icons/equipment/feet/shoes-sneakers-blue.webp",
+      "img": "systems/ss13/icons/items/bandastation/medical_boots.png",
       "system": {
         "type": "shoes",
         "protection": {
@@ -321,7 +321,7 @@
       "id": "health_analyzer",
       "name": "Health Analyzer",
       "type": "tool",
-      "img": "icons/tools/misc/scanner.webp",
+      "img": "systems/ss13/icons/items/bandastation/health_analyzer.png",
       "system": {
         "type": "diagnose",
         "skill": "medical",
@@ -332,7 +332,7 @@
       "id": "medical_kit",
       "name": "Medical Kit",
       "type": "tool",
-      "img": "icons/medical/bandages/bandage-plain.webp",
+      "img": "systems/ss13/icons/items/bandastation/medical_kit.png",
       "system": {
         "type": "heal",
         "skill": "medical",
@@ -344,7 +344,7 @@
       "id": "cable_coil",
       "name": "Cable Coil",
       "type": "tool",
-      "img": "icons/tools/electronics/cable.webp",
+      "img": "systems/ss13/icons/items/bandastation/cable_coil.png",
       "system": {
         "type": "repair",
         "skill": "engineering",
@@ -356,7 +356,7 @@
       "id": "power_cell",
       "name": "Power Cell",
       "type": "equipment",
-      "img": "icons/equipment/misc/battery.webp",
+      "img": "systems/ss13/icons/items/bandastation/power_cell.png",
       "system": {
         "type": "battery",
         "charge": 100,
@@ -367,7 +367,7 @@
       "id": "mop",
       "name": "Mop",
       "type": "tool",
-      "img": "icons/tools/misc/mop.webp",
+      "img": "systems/ss13/icons/items/bandastation/mop.png",
       "system": {
         "type": "clean",
         "skill": "service",
@@ -378,7 +378,7 @@
       "id": "chef_knife",
       "name": "Chef Knife",
       "type": "weapon",
-      "img": "icons/weapons/kitchen/knife-food.webp",
+      "img": "systems/ss13/icons/items/bandastation/chef_knife.png",
       "system": {
         "type": "melee",
         "damage": "1d6",
@@ -390,7 +390,7 @@
       "id": "pda",
       "name": "PDA",
       "type": "tool",
-      "img": "icons/items/tools/radio.webp",
+      "img": "systems/ss13/icons/items/bandastation/pda.png",
       "system": {
         "type": "pda",
         "slot": "belt"
@@ -400,7 +400,7 @@
       "id": "disabler",
       "name": "Disabler",
       "type": "weapon",
-      "img": "icons/weapons/guns/gun-energy-pistol.webp",
+      "img": "systems/ss13/icons/items/bandastation/disabler.png",
       "system": {
         "type": "range",
         "damage": "1d8+1",
@@ -415,7 +415,7 @@
       "id": "laser_gun",
       "name": "Laser Gun",
       "type": "weapon",
-      "img": "icons/weapons/guns/gun-energy-rifle.webp",
+      "img": "systems/ss13/icons/items/bandastation/laser_gun.png",
       "system": {
         "type": "range",
         "damage": "2d8",
@@ -430,7 +430,7 @@
       "id": "shotgun",
       "name": "Shotgun",
       "type": "weapon",
-      "img": "icons/weapons/guns/gun-shotgun.webp",
+      "img": "systems/ss13/icons/items/bandastation/shotgun.png",
       "system": {
         "type": "range",
         "damage": "3d10",
@@ -445,7 +445,7 @@
       "id": "ammo_357",
       "name": ".357 Ammo",
       "type": "ammo",
-      "img": "icons/items/bullets/bullets-box.webp",
+      "img": "systems/ss13/icons/items/bandastation/ammo_357.png",
       "system": {
         "type": "bullets357",
         "amount": 7,
@@ -456,7 +456,7 @@
       "id": "ammo_shells",
       "name": "Shotgun Shells",
       "type": "ammo",
-      "img": "icons/items/bullets/bullets-box.webp",
+      "img": "systems/ss13/icons/items/bandastation/ammo_shells.png",
       "system": {
         "type": "shells",
         "amount": 8,
@@ -467,7 +467,7 @@
       "id": "energy_cells",
       "name": "Energy Cells",
       "type": "ammo",
-      "img": "icons/items/bullets/cell.webp",
+      "img": "systems/ss13/icons/items/bandastation/energy_cells.png",
       "system": {
         "type": "cells",
         "amount": 10,
@@ -478,7 +478,7 @@
       "id": "radio_headset",
       "name": "Radio Headset",
       "type": "equipment",
-      "img": "icons/items/tools/radio.webp",
+      "img": "systems/ss13/icons/items/bandastation/radio_headset.png",
       "system": {
         "type": "radio",
         "channel": "common",
@@ -489,7 +489,7 @@
       "id": "secrecy_briefcase",
       "name": "Secretary Briefcase",
       "type": "equipment",
-      "img": "icons/equipment/back/backpack.webp",
+      "img": "systems/ss13/icons/items/bandastation/secrecy_briefcase.png",
       "system": {
         "type": "storage",
         "capacity": 15,
@@ -500,7 +500,7 @@
       "id": "screwdriver",
       "name": "Screwdriver",
       "type": "tool",
-      "img": "icons/tools/handheld/screwdriver-flathead-red.webp",
+      "img": "systems/ss13/icons/items/bandastation/screwdriver.png",
       "system": {
         "type": "repair",
         "skill": "engineering",
@@ -511,7 +511,7 @@
       "id": "crowbar",
       "name": "Crowbar",
       "type": "tool",
-      "img": "icons/tools/handheld/crowbar-red.webp",
+      "img": "systems/ss13/icons/items/bandastation/crowbar.png",
       "system": {
         "type": "pry",
         "skill": "engineering",
@@ -522,7 +522,7 @@
       "id": "wirecutters",
       "name": "Wirecutters",
       "type": "tool",
-      "img": "icons/tools/handheld/clippers.webp",
+      "img": "systems/ss13/icons/items/bandastation/wirecutters.png",
       "system": {
         "type": "repair",
         "skill": "engineering",
@@ -533,7 +533,7 @@
       "id": "welding_tool",
       "name": "Welding Tool",
       "type": "tool",
-      "img": "icons/tools/handheld/torch-blue.webp",
+      "img": "systems/ss13/icons/items/bandastation/welding_tool.png",
       "system": {
         "type": "repair",
         "skill": "engineering",
@@ -547,7 +547,7 @@
       "id": "toolbox_mechanical",
       "name": "Mechanical Toolbox",
       "type": "equipment",
-      "img": "icons/containers/chest/chest-reinforced-steel.webp",
+      "img": "systems/ss13/icons/items/bandastation/toolbox_mechanical.png",
       "system": {
         "type": "storage",
         "capacity": 8,
@@ -558,7 +558,7 @@
       "id": "utility_belt",
       "name": "Utility Belt",
       "type": "equipment",
-      "img": "icons/equipment/waist/belt-buckle-square.webp",
+      "img": "systems/ss13/icons/items/bandastation/utility_belt.png",
       "system": {
         "type": "storage",
         "capacity": 7,
@@ -569,7 +569,7 @@
       "id": "insulated_gloves",
       "name": "Insulated Gloves",
       "type": "equipment",
-      "img": "icons/equipment/hands/gloves-leather-brown.webp",
+      "img": "systems/ss13/icons/items/bandastation/insulated_gloves.png",
       "system": {
         "type": "hands",
         "protection": {
@@ -585,7 +585,7 @@
       "id": "hard_hat",
       "name": "Hard Hat",
       "type": "equipment",
-      "img": "icons/equipment/head/helm-barbute.webp",
+      "img": "systems/ss13/icons/items/bandastation/hard_hat.png",
       "system": {
         "type": "head",
         "protection": {
@@ -601,7 +601,7 @@
       "id": "meson_scanner",
       "name": "Meson Scanner",
       "type": "equipment",
-      "img": "icons/equipment/eyes/goggles-lenses-green.webp",
+      "img": "systems/ss13/icons/items/bandastation/meson_scanner.png",
       "system": {
         "type": "scanner",
         "skill": "engineering",
@@ -612,7 +612,7 @@
       "id": "fire_extinguisher",
       "name": "Fire Extinguisher",
       "type": "tool",
-      "img": "icons/tools/smithing/crucible.webp",
+      "img": "systems/ss13/icons/items/bandastation/fire_extinguisher.png",
       "system": {
         "type": "emergency",
         "effect": "extinguish",
@@ -624,7 +624,7 @@
       "id": "rapid_cable_layer",
       "name": "Rapid Cable Layer",
       "type": "tool",
-      "img": "icons/tools/smithing/tongs.webp",
+      "img": "systems/ss13/icons/items/bandastation/rapid_cable_layer.png",
       "system": {
         "type": "repair",
         "skill": "engineering",
@@ -636,7 +636,7 @@
       "id": "defibrillator",
       "name": "Defibrillator",
       "type": "tool",
-      "img": "icons/magic/lightning/bolt-strike-blue.webp",
+      "img": "systems/ss13/icons/items/bandastation/defibrillator.png",
       "system": {
         "type": "revive",
         "skill": "medical",
@@ -648,7 +648,7 @@
       "id": "syringe",
       "name": "Syringe",
       "type": "tool",
-      "img": "icons/commodities/biological/syringe-red.webp",
+      "img": "systems/ss13/icons/items/bandastation/syringe.png",
       "system": {
         "type": "inject",
         "skill": "medical",
@@ -660,7 +660,7 @@
       "id": "medipen",
       "name": "Medipen",
       "type": "tool",
-      "img": "icons/commodities/biological/syringe-green.webp",
+      "img": "systems/ss13/icons/items/bandastation/medipen.png",
       "system": {
         "type": "heal",
         "skill": "medical",
@@ -672,7 +672,7 @@
       "id": "brute_patch",
       "name": "Brute Patch",
       "type": "tool",
-      "img": "icons/medical/bandages/bandage-plain.webp",
+      "img": "systems/ss13/icons/items/bandastation/brute_patch.png",
       "system": {
         "type": "heal",
         "skill": "medical",
@@ -685,7 +685,7 @@
       "id": "burn_patch",
       "name": "Burn Patch",
       "type": "tool",
-      "img": "icons/medical/bandages/bandage-blood-red.webp",
+      "img": "systems/ss13/icons/items/bandastation/burn_patch.png",
       "system": {
         "type": "heal",
         "skill": "medical",
@@ -698,7 +698,7 @@
       "id": "first_aid_kit",
       "name": "First Aid Kit",
       "type": "equipment",
-      "img": "icons/containers/bags/pack-leather-red.webp",
+      "img": "systems/ss13/icons/items/bandastation/first_aid_kit.png",
       "system": {
         "type": "storage",
         "capacity": 8,
@@ -709,7 +709,7 @@
       "id": "medical_belt",
       "name": "Medical Belt",
       "type": "equipment",
-      "img": "icons/equipment/waist/belt-pouch-red.webp",
+      "img": "systems/ss13/icons/items/bandastation/medical_belt.png",
       "system": {
         "type": "storage",
         "capacity": 7,
@@ -720,7 +720,7 @@
       "id": "medical_glasses_hud",
       "name": "Medical HUD Glasses",
       "type": "equipment",
-      "img": "icons/equipment/eyes/goggles-lenses-blue.webp",
+      "img": "systems/ss13/icons/items/bandastation/medical_glasses_hud.png",
       "system": {
         "type": "scanner",
         "skill": "medical",
@@ -731,7 +731,7 @@
       "id": "body_bag",
       "name": "Body Bag",
       "type": "tool",
-      "img": "icons/sundries/survival/bedroll-grey.webp",
+      "img": "systems/ss13/icons/items/bandastation/body_bag.png",
       "system": {
         "type": "container",
         "slot": "right_hand"
@@ -741,7 +741,7 @@
       "id": "security_belt",
       "name": "Security Belt",
       "type": "equipment",
-      "img": "icons/equipment/waist/belt-thick-buckle-steel.webp",
+      "img": "systems/ss13/icons/items/bandastation/security_belt.png",
       "system": {
         "type": "storage",
         "capacity": 7,
@@ -752,7 +752,7 @@
       "id": "pepper_spray",
       "name": "Pepper Spray",
       "type": "tool",
-      "img": "icons/consumables/potions/bottle-round-corked-yellow.webp",
+      "img": "systems/ss13/icons/items/bandastation/pepper_spray.png",
       "system": {
         "type": "control",
         "effect": "blind",
@@ -764,7 +764,7 @@
       "id": "seclite",
       "name": "Seclite",
       "type": "tool",
-      "img": "icons/sundries/lights/lantern-bullseye-signal.webp",
+      "img": "systems/ss13/icons/items/bandastation/seclite.png",
       "system": {
         "type": "light",
         "slot": "left_pocket"
@@ -774,7 +774,7 @@
       "id": "forensic_scanner",
       "name": "Forensic Scanner",
       "type": "tool",
-      "img": "icons/tools/scribal/magnifying-glass.webp",
+      "img": "systems/ss13/icons/items/bandastation/forensic_scanner.png",
       "system": {
         "type": "scan",
         "skill": "sleight",
@@ -785,7 +785,7 @@
       "id": "evidence_bag",
       "name": "Evidence Bag",
       "type": "tool",
-      "img": "icons/containers/bags/pouch-leather-tan.webp",
+      "img": "systems/ss13/icons/items/bandastation/evidence_bag.png",
       "system": {
         "type": "container",
         "slot": "right_pocket"
@@ -795,7 +795,7 @@
       "id": "security_sunglasses",
       "name": "Security HUD Sunglasses",
       "type": "equipment",
-      "img": "icons/equipment/eyes/goggles-lenses-red.webp",
+      "img": "systems/ss13/icons/items/bandastation/security_sunglasses.png",
       "system": {
         "type": "scanner",
         "skill": "intimidate",
@@ -806,7 +806,7 @@
       "id": "combat_knife",
       "name": "Combat Knife",
       "type": "weapon",
-      "img": "icons/weapons/daggers/dagger-steel.webp",
+      "img": "systems/ss13/icons/items/bandastation/combat_knife.png",
       "system": {
         "type": "melee",
         "damage": "1d8",
@@ -818,7 +818,7 @@
       "id": "energy_gun",
       "name": "Energy Gun",
       "type": "weapon",
-      "img": "icons/weapons/guns/gun-energy-pistol.webp",
+      "img": "systems/ss13/icons/items/bandastation/energy_gun.png",
       "system": {
         "type": "range",
         "damage": "2d8",
@@ -833,7 +833,7 @@
       "id": "science_goggles",
       "name": "Science Goggles",
       "type": "equipment",
-      "img": "icons/equipment/eyes/goggles-lenses-purple.webp",
+      "img": "systems/ss13/icons/items/bandastation/science_goggles.png",
       "system": {
         "type": "scanner",
         "skill": "science",
@@ -844,7 +844,7 @@
       "id": "analyzer",
       "name": "Analyzer",
       "type": "tool",
-      "img": "icons/tools/scribal/magnifying-glass.webp",
+      "img": "systems/ss13/icons/items/bandastation/analyzer.png",
       "system": {
         "type": "scan",
         "skill": "science",
@@ -855,7 +855,7 @@
       "id": "beaker",
       "name": "Beaker",
       "type": "tool",
-      "img": "icons/consumables/potions/bottle-round-empty.webp",
+      "img": "systems/ss13/icons/items/bandastation/beaker.png",
       "system": {
         "type": "chemistry",
         "skill": "science",
@@ -867,7 +867,7 @@
       "id": "large_beaker",
       "name": "Large Beaker",
       "type": "tool",
-      "img": "icons/consumables/potions/bottle-round-empty-glass.webp",
+      "img": "systems/ss13/icons/items/bandastation/large_beaker.png",
       "system": {
         "type": "chemistry",
         "skill": "science",
@@ -879,7 +879,7 @@
       "id": "dropper",
       "name": "Dropper",
       "type": "tool",
-      "img": "icons/tools/laboratory/dropper.webp",
+      "img": "systems/ss13/icons/items/bandastation/dropper.png",
       "system": {
         "type": "chemistry",
         "skill": "science",
@@ -891,7 +891,7 @@
       "id": "plant_analyzer",
       "name": "Plant Analyzer",
       "type": "tool",
-      "img": "icons/tools/scribal/magnifying-glass.webp",
+      "img": "systems/ss13/icons/items/bandastation/plant_analyzer.png",
       "system": {
         "type": "scan",
         "skill": "science",
@@ -902,7 +902,7 @@
       "id": "mining_scanner",
       "name": "Mining Scanner",
       "type": "tool",
-      "img": "icons/tools/scribal/magnifying-glass.webp",
+      "img": "systems/ss13/icons/items/bandastation/mining_scanner.png",
       "system": {
         "type": "scan",
         "skill": "survival",
@@ -913,7 +913,7 @@
       "id": "kinetic_accelerator",
       "name": "Kinetic Accelerator",
       "type": "weapon",
-      "img": "icons/weapons/guns/gun-blunderbuss.webp",
+      "img": "systems/ss13/icons/items/bandastation/kinetic_accelerator.png",
       "system": {
         "type": "range",
         "damage": "2d8",
@@ -926,7 +926,7 @@
       "id": "mining_pickaxe",
       "name": "Pickaxe",
       "type": "tool",
-      "img": "icons/tools/hand/pickaxe-steel-white.webp",
+      "img": "systems/ss13/icons/items/bandastation/mining_pickaxe.png",
       "system": {
         "type": "mining",
         "skill": "survival",
@@ -939,7 +939,7 @@
       "id": "ore_bag",
       "name": "Ore Bag",
       "type": "equipment",
-      "img": "icons/containers/bags/sack-simple-brown.webp",
+      "img": "systems/ss13/icons/items/bandastation/ore_bag.png",
       "system": {
         "type": "storage",
         "capacity": 20,
@@ -950,7 +950,7 @@
       "id": "cargo_headset",
       "name": "Cargo Headset",
       "type": "equipment",
-      "img": "icons/items/tools/radio.webp",
+      "img": "systems/ss13/icons/items/bandastation/cargo_headset.png",
       "system": {
         "type": "radio",
         "channel": "cargo",
@@ -961,7 +961,7 @@
       "id": "engineering_headset",
       "name": "Engineering Headset",
       "type": "equipment",
-      "img": "icons/items/tools/radio.webp",
+      "img": "systems/ss13/icons/items/bandastation/engineering_headset.png",
       "system": {
         "type": "radio",
         "channel": "engineering",
@@ -972,7 +972,7 @@
       "id": "medical_headset",
       "name": "Medical Headset",
       "type": "equipment",
-      "img": "icons/items/tools/radio.webp",
+      "img": "systems/ss13/icons/items/bandastation/medical_headset.png",
       "system": {
         "type": "radio",
         "channel": "medical",
@@ -983,7 +983,7 @@
       "id": "science_headset",
       "name": "Science Headset",
       "type": "equipment",
-      "img": "icons/items/tools/radio.webp",
+      "img": "systems/ss13/icons/items/bandastation/science_headset.png",
       "system": {
         "type": "radio",
         "channel": "science",
@@ -994,7 +994,7 @@
       "id": "security_headset",
       "name": "Security Headset",
       "type": "equipment",
-      "img": "icons/items/tools/radio.webp",
+      "img": "systems/ss13/icons/items/bandastation/security_headset.png",
       "system": {
         "type": "radio",
         "channel": "security",
@@ -1005,7 +1005,7 @@
       "id": "command_headset",
       "name": "Command Headset",
       "type": "equipment",
-      "img": "icons/items/tools/radio.webp",
+      "img": "systems/ss13/icons/items/bandastation/command_headset.png",
       "system": {
         "type": "radio",
         "channel": "command",
@@ -1016,7 +1016,7 @@
       "id": "backpack",
       "name": "Backpack",
       "type": "equipment",
-      "img": "icons/containers/bags/backpack-leather-brown.webp",
+      "img": "systems/ss13/icons/items/bandastation/backpack.png",
       "system": {
         "type": "storage",
         "capacity": 20,
@@ -1027,7 +1027,7 @@
       "id": "satchel",
       "name": "Satchel",
       "type": "equipment",
-      "img": "icons/containers/bags/satchel-leather-brown.webp",
+      "img": "systems/ss13/icons/items/bandastation/satchel.png",
       "system": {
         "type": "storage",
         "capacity": 18,
@@ -1038,7 +1038,7 @@
       "id": "duffel_bag",
       "name": "Duffel Bag",
       "type": "equipment",
-      "img": "icons/containers/bags/duffel-leather-brown.webp",
+      "img": "systems/ss13/icons/items/bandastation/duffel_bag.png",
       "system": {
         "type": "storage",
         "capacity": 24,
@@ -1049,7 +1049,7 @@
       "id": "breath_mask",
       "name": "Breath Mask",
       "type": "equipment",
-      "img": "icons/equipment/head/mask-carved-wood-tan.webp",
+      "img": "systems/ss13/icons/items/bandastation/breath_mask.png",
       "system": {
         "type": "mask",
         "protection": {
@@ -1065,7 +1065,7 @@
       "id": "gas_mask",
       "name": "Gas Mask",
       "type": "equipment",
-      "img": "icons/equipment/head/mask-carved-grey.webp",
+      "img": "systems/ss13/icons/items/bandastation/gas_mask.png",
       "system": {
         "type": "mask",
         "protection": {
@@ -1081,7 +1081,7 @@
       "id": "emergency_oxygen_tank",
       "name": "Emergency Oxygen Tank",
       "type": "equipment",
-      "img": "icons/equipment/chest/breastplate-banded-steel.webp",
+      "img": "systems/ss13/icons/items/bandastation/emergency_oxygen_tank.png",
       "system": {
         "type": "oxygen",
         "amount": 60,
@@ -1092,7 +1092,7 @@
       "id": "janicart_keys",
       "name": "Janicart Keys",
       "type": "tool",
-      "img": "icons/sundries/misc/key-steel.webp",
+      "img": "systems/ss13/icons/items/bandastation/janicart_keys.png",
       "system": {
         "type": "key",
         "slot": "left_pocket"
@@ -1102,7 +1102,7 @@
       "id": "soap",
       "name": "Soap",
       "type": "tool",
-      "img": "icons/commodities/materials/slime-white.webp",
+      "img": "systems/ss13/icons/items/bandastation/soap.png",
       "system": {
         "type": "clean",
         "skill": "survival",
@@ -1113,7 +1113,7 @@
       "id": "spray_bottle",
       "name": "Spray Bottle",
       "type": "tool",
-      "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
+      "img": "systems/ss13/icons/items/bandastation/spray_bottle.png",
       "system": {
         "type": "clean",
         "uses": 10,
@@ -1124,7 +1124,7 @@
       "id": "botany_hatchet",
       "name": "Hatchet",
       "type": "weapon",
-      "img": "icons/weapons/axes/axe-broad.webp",
+      "img": "systems/ss13/icons/items/bandastation/botany_hatchet.png",
       "system": {
         "type": "melee",
         "damage": "1d8",
@@ -1136,7 +1136,7 @@
       "id": "rolling_pin",
       "name": "Rolling Pin",
       "type": "weapon",
-      "img": "icons/weapons/clubs/club-simple.webp",
+      "img": "systems/ss13/icons/items/bandastation/rolling_pin.png",
       "system": {
         "type": "melee",
         "damage": "1d4",
@@ -1148,7 +1148,7 @@
       "id": "tray",
       "name": "Serving Tray",
       "type": "tool",
-      "img": "icons/containers/kitchenware/plate.webp",
+      "img": "systems/ss13/icons/items/bandastation/tray.png",
       "system": {
         "type": "service",
         "slot": "left_hand"
