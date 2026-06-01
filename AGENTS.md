@@ -9,12 +9,12 @@
 - `system.json` - Foundry system manifest. Currently loads `module.js` and `styles/ss13.css`.
 - `module.js` - system initialization, sheet registration, actor/item defaults, and global d100 roll handler.
 - `template.json` - actor and item data schemas.
-- `items.json` - source data for 94 base items. Import in Foundry with `game.ss13.importBaseItems()`.
+- `items.json` - source data for 94 base items. Import in Foundry via Configure Settings -> SS13 Base Items -> Import Base Items.
 - `scripts/actor.js` - actor document class, character sheet, professions, skill ranks, and equipment slot display.
 - `scripts/item.js` - item sheet setup, type flags, slot options, skill options, and extra field discovery.
 - `scripts/ss13.js` - damage helper imported by `module.js`.
 - `scripts/validate-data.mjs` - local data consistency check for JSON, skills, items, and profession references.
-- `templates/` - Handlebars actor and item sheets.
+- `templates/` - Handlebars actor, item, and import utility sheets.
 - `styles/ss13.css` - SS13-themed sheet styling.
 - `lang/ru.json`, `lang/en.json` - localization strings. Templates currently contain mostly hardcoded English text.
 - `icons/slots/` - equipment slot icons used by the actor sheet.
@@ -27,7 +27,7 @@ Design notes live one level up in `SS13module/`: `диздок.md`, `систе�
 
 ## Development Workflow
 
-Install by copying this folder to Foundry `Data/systems/ss13/`, then create or reload a world using system id `ss13`. After edits, reload Foundry or the world. Import base items from the browser console as a GM with `await game.ss13.importBaseItems()`. Validate JSON and skill references before testing:
+Install by copying this folder to Foundry `Data/systems/ss13/`, then create or reload a world using system id `ss13`. After edits, reload Foundry or the world. Import base items as a GM from Configure Settings -> SS13 Base Items -> Import Base Items. Validate JSON and skill references before testing:
 
 ```powershell
 node scripts/validate-data.mjs
@@ -39,4 +39,4 @@ Use two-space indentation in JSON and JavaScript, matching the existing files. K
 
 ## Testing Checklist
 
-Before handoff, verify the system loads in Foundry without console errors, actor and item sheets open, profession selection updates skill ranks, skill/save buttons produce chat rolls, and equipment slot icons render. For item work, confirm imported weapons, tools, equipment, ID cards, ammo, and grenades expose editable fields and that item skills match `template.json`.
+Before handoff, verify the system loads in Foundry without console errors, actor and item sheets open, profession selection updates skill ranks, skill/save buttons produce chat rolls, and equipment slot icons render. Actor inventory uses embedded items: drag an item onto an actor, then equip it from the Carried Items list. For item work, confirm imported weapons, tools, equipment, ID cards, ammo, and grenades expose editable fields and that item skills match `template.json`.

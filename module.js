@@ -193,6 +193,50 @@ async function importBaseItems({ updateExisting = false } = {}) {
   return result;
 }
 
+class SS13ImportItemsConfig extends FormApplication {
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      title: "SS13 Base Items",
+      id: "ss13-import-items",
+      template: "systems/ss13/templates/import-items.html",
+      width: 420,
+      height: "auto",
+      closeOnSubmit: false
+    });
+  }
+
+  async getData() {
+    const sourceItems = await loadBaseItems();
+    const existingSourceIds = new Set(
+      game.items
+        .filter(item => item.getFlag("ss13", "sourceId"))
+        .map(item => item.getFlag("ss13", "sourceId"))
+    );
+    const missingCount = sourceItems.filter(item => !existingSourceIds.has(item.id)).length;
+    return {
+      totalCount: sourceItems.length,
+      importedCount: sourceItems.length - missingCount,
+      missingCount
+    };
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+    html.find("[data-action='import']").click(async ev => {
+      ev.preventDefault();
+      await importBaseItems();
+      this.render();
+    });
+    html.find("[data-action='update']").click(async ev => {
+      ev.preventDefault();
+      await importBaseItems({updateExisting: true});
+      this.render();
+    });
+  }
+
+  async _updateObject() {}
+}
+
 window.SS13Roll = {
   skill: async (actorId, attribute, skill) => {
     const actor = game.actors.get(actorId);
@@ -249,6 +293,15 @@ Hooks.once('init', async function() {
   
   Items.registerSheet("ss13", SS13ItemSheet, { 
     makeDefault: true 
+  });
+
+  game.settings.registerMenu("ss13", "importBaseItems", {
+    name: "Import Base Items",
+    label: "Open Importer",
+    hint: "Import or update the bundled SS13 base items into this world.",
+    icon: "fas fa-box-open",
+    type: SS13ImportItemsConfig,
+    restricted: true
   });
 });
 

@@ -144,6 +144,15 @@ const SLOT_ORDER = [
   "shoes"
 ];
 
+const SKILL_GROUPS = [
+  {label: "Combat", skills: ["melee", "guns", "throwing", "explosives"]},
+  {label: "Engineering", skills: ["engineering", "construction", "power", "atmospherics"]},
+  {label: "Medical", skills: ["medical", "surgery", "chemistry"]},
+  {label: "Science", skills: ["science", "robotics", "xenobiology", "hacking"]},
+  {label: "Social", skills: ["intimidate", "persuade", "deceive", "command", "bureaucracy", "performance"]},
+  {label: "Operations", skills: ["cargo", "service", "sleight", "piloting", "survival"]}
+];
+
 function legacyValueToRank(value) {
   if (value >= 20) return 3;
   if (value >= 15) return 2;
@@ -192,6 +201,33 @@ function enrichSkillsForMothership(systemData) {
     delete skillData.value;
     delete skillData.target;
   }
+}
+
+function buildSkillGroups(systemData) {
+  return SKILL_GROUPS.map(group => ({
+    label: group.label,
+    skills: group.skills
+      .filter(key => systemData.skills?.[key])
+      .map(key => ({
+        key,
+        ...systemData.skills[key]
+      }))
+  }));
+}
+
+function buildSlotOptions(selectedSlot = "") {
+  return [
+    {value: "", label: "None", selected: !selectedSlot},
+    ...SLOT_ORDER.map(slot => ({
+      value: slot,
+      label: slot,
+      selected: selectedSlot === slot
+    }))
+  ];
+}
+
+function getEquippedItemIds(slotData) {
+  return new Set(Object.values(slotData ?? {}).filter(Boolean));
 }
 
 export class SS13Actor extends Actor {
@@ -259,6 +295,7 @@ export class SS13ActorSheet extends ActorSheet {
       id,
       label: data.label ?? id.toUpperCase()
     }));
+    context.skillGroups = buildSkillGroups(context.system);
     context.professionConfig = {
       professionOptions: [
         { id: "", label: "None", selected: !context.system.profession.id },
@@ -271,11 +308,23 @@ export class SS13ActorSheet extends ActorSheet {
       engineerSpecializations: []
     };
     const slotData = context.system.inventory?.slots ?? {};
+    const equippedItemIds = getEquippedItemIds(slotData);
     context.inventorySlots = SLOT_ORDER.filter(key => key in slotData).map(key => ({
       key,
       itemId: slotData[key],
+      item: this.actor.items.get(slotData[key]) ?? null,
       icon: SLOT_ICONS[key] || "systems/ss13/icons/slots/id.png"
     }));
+    context.carriedItems = this.actor.items
+      .filter(item => !equippedItemIds.has(item.id))
+      .map(item => ({
+        id: item.id,
+        name: item.name,
+        type: item.type,
+        img: item.img,
+        slot: item.system.slot ?? "",
+        slotOptions: buildSlotOptions(item.system.slot ?? "")
+      }));
     return context;
   }
 
@@ -315,6 +364,34 @@ export class SS13ActorSheet extends ActorSheet {
       await this.actor.update({
         [`system.skills.${skillKey}.rank`]: rankValue
       });
+    });
+
+    html.find(".equip-item").click(async ev => {
+      ev.preventDefault();
+      const row = $(ev.currentTarget).closest(".inventory-row");
+      const itemId = String(row.data("itemId") || "");
+      const slot = String(row.find(".equip-slot-select").val() || "");
+      if (!itemId || !slot) return;
+      const slots = foundry.utils.deepClone(this.actor.system.inventory?.slots ?? {});
+      for (const [slotKey, equippedItemId] of Object.entries(slots)) {
+        if (equippedItemId === itemId) slots[slotKey] = "";
+      }
+      slots[slot] = itemId;
+      await this.actor.update({"system.inventory.slots": slots});
+    });
+
+    html.find(".unequip-slot").click(async ev => {
+      ev.preventDefault();
+      const slot = String($(ev.currentTarget).data("slot") || "");
+      if (!slot) return;
+      await this.actor.update({[`system.inventory.slots.${slot}`]: ""});
+    });
+
+    html.find(".open-item").click(ev => {
+      ev.preventDefault();
+      const itemId = String($(ev.currentTarget).data("itemId") || "");
+      const item = this.actor.items.get(itemId);
+      item?.sheet?.render(true);
     });
   }
 }

@@ -137,9 +137,20 @@
 
 .ss13-sheet .skill-row {
   display: grid;
-  grid-template-columns: 56px 82px 1fr;
+  grid-template-columns: minmax(128px, 1fr) 50px 74px;
   gap: 8px;
   margin-bottom: 6px;
+}
+
+.ss13-sheet .skill-group {
+  margin-bottom: 10px;
+}
+
+.ss13-sheet .skill-group h4 {
+  margin: 0 0 6px;
+  color: var(--ss13-muted);
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .ss13-sheet .skill-roll,
@@ -225,6 +236,65 @@
   color: var(--ss13-accent-2);
   font-size: 11px;
   word-break: break-word;
+}
+
+.ss13-sheet .slot-item,
+.ss13-sheet .inventory-name,
+.ss13-sheet .equip-item,
+.ss13-sheet .unequip-slot {
+  position: relative;
+  z-index: 1;
+  color: var(--ss13-text);
+  background: rgba(34, 43, 54, 0.88);
+  border: 1px solid var(--ss13-border);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ss13-sheet .slot-item {
+  width: 100%;
+  margin-top: 8px;
+  padding: 5px;
+  color: var(--ss13-accent-2);
+}
+
+.ss13-sheet .unequip-slot {
+  margin-top: 6px;
+  padding: 4px 6px;
+  font-size: 11px;
+}
+
+.ss13-sheet .inventory-list {
+  display: grid;
+  gap: 6px;
+}
+
+.ss13-sheet .inventory-row {
+  display: grid;
+  grid-template-columns: 32px minmax(140px, 1fr) 82px 124px 64px;
+  gap: 8px;
+  align-items: center;
+  padding: 6px;
+  background: var(--ss13-panel);
+  border: 1px solid var(--ss13-border);
+  border-radius: 6px;
+}
+
+.ss13-sheet .inventory-row img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.ss13-sheet .inventory-row span,
+.ss13-sheet .empty-inventory {
+  color: var(--ss13-muted);
+  font-size: 12px;
+}
+
+.ss13-sheet .inventory-name,
+.ss13-sheet .equip-item {
+  padding: 5px 7px;
 }
 
 .ss13.item-sheet .window-content {
@@ -314,4 +384,25 @@
 
 .ss13-item-sheet .check-row input {
   width: auto;
+}
+
+.ss13-import-items {
+  display: grid;
+  gap: 12px;
+}
+
+.ss13-import-items .import-summary {
+  padding: 10px;
+  border: 1px solid var(--ss13-border);
+  border-radius: 8px;
+  background: var(--ss13-panel);
+}
+
+.ss13-import-items .import-summary p {
+  margin: 4px 0;
+}
+
+.ss13-import-items .import-actions {
+  display: flex;
+  gap: 8px;
 }

@@ -41,15 +41,20 @@
             {{/each}}
           </select>
         </div>
-        {{#each system.skills as |skill key|}}
-        <div class="skill-row">
-          <input class="skill-rank-select" data-skill="{{key}}" type="number" min="0" max="3" value="{{skill.rank}}"/>
-          <select class="skill-attribute-select" data-skill="{{key}}">
-            {{#each ../attributeOptions as |attribute|}}
-            <option value="{{attribute.id}}">{{attribute.label}}</option>
-            {{/each}}
-          </select>
-          <button type="button" class="skill-roll" data-skill="{{key}}" data-actor="{{actor._id}}">{{skill.label}} +{{skill.bonus}}</button>
+        {{#each skillGroups as |group|}}
+        <div class="skill-group">
+          <h4>{{group.label}}</h4>
+          {{#each group.skills as |skill|}}
+          <div class="skill-row">
+            <button type="button" class="skill-roll" data-skill="{{skill.key}}" data-actor="{{../../actor._id}}">{{skill.label}} +{{skill.bonus}}</button>
+            <input class="skill-rank-select" data-skill="{{skill.key}}" type="number" min="0" max="3" value="{{skill.rank}}"/>
+            <select class="skill-attribute-select" data-skill="{{skill.key}}">
+              {{#each ../../attributeOptions as |attribute|}}
+              <option value="{{attribute.id}}">{{attribute.label}}</option>
+              {{/each}}
+            </select>
+          </div>
+          {{/each}}
         </div>
         {{/each}}
       </section>
@@ -62,8 +67,33 @@
           <div class="slot-card {{slot.key}}">
             <img class="slot-icon" src="{{slot.icon}}" alt="{{slot.key}}"/>
             <label>{{slot.key}}</label>
-            <span>{{slot.itemId}}</span>
+            {{#if slot.item}}
+            <button type="button" class="slot-item open-item" data-item-id="{{slot.item.id}}">{{slot.item.name}}</button>
+            <button type="button" class="unequip-slot" data-slot="{{slot.key}}">Unequip</button>
+            {{else}}
+            <span>Empty</span>
+            {{/if}}
           </div>
+          {{/each}}
+        </div>
+      </section>
+      <section class="inventory">
+        <h3>Carried Items</h3>
+        <div class="inventory-list">
+          {{#each carriedItems as |item|}}
+          <div class="inventory-row" data-item-id="{{item.id}}">
+            <img src="{{item.img}}" alt="{{item.name}}"/>
+            <button type="button" class="inventory-name open-item" data-item-id="{{item.id}}">{{item.name}}</button>
+            <span>{{item.type}}</span>
+            <select class="equip-slot-select">
+              {{#each item.slotOptions as |slot|}}
+              <option value="{{slot.value}}" {{#if slot.selected}}selected{{/if}}>{{slot.label}}</option>
+              {{/each}}
+            </select>
+            <button type="button" class="equip-item">Equip</button>
+          </div>
+          {{else}}
+          <p class="empty-inventory">Drag items onto this actor sheet to add them to inventory.</p>
           {{/each}}
         </div>
       </section>
