@@ -52,7 +52,7 @@ const ACTOR_DEFAULTS = {
   inventory: {
     slots: {
       uniform: "", armor: "", head: "", belt: "", back: "",
-      id: "", ears: "", left_pocket: "", right_pocket: "",
+      id: "", ears: "", eyes: "", left_pocket: "", right_pocket: "",
       left_hand: "", right_hand: "", shoes: "", hands: ""
     },
     protection: {
@@ -120,6 +120,7 @@ const SLOT_ICONS = {
   back: "systems/ss13/icons/slots/back.png",
   id: "systems/ss13/icons/slots/id.png",
   ears: "systems/ss13/icons/slots/ears.png",
+  eyes: "systems/ss13/icons/slots/glasses.png",
   left_pocket: "systems/ss13/icons/slots/pocket.png",
   right_pocket: "systems/ss13/icons/slots/pocket.png",
   left_hand: "systems/ss13/icons/slots/hand_l.png",
@@ -128,8 +129,26 @@ const SLOT_ICONS = {
   hands: "systems/ss13/icons/slots/gloves.png"
 };
 
+const SLOT_LABELS = {
+  uniform: "Uniform",
+  armor: "Armor",
+  head: "Head",
+  belt: "Belt",
+  back: "Back",
+  id: "ID",
+  ears: "Ears",
+  eyes: "HUD / Glasses",
+  left_pocket: "Left Pocket",
+  right_pocket: "Right Pocket",
+  left_hand: "Left Hand",
+  right_hand: "Right Hand",
+  hands: "Gloves",
+  shoes: "Shoes"
+};
+
 const SLOT_ORDER = [
   "head",
+  "eyes",
   "uniform",
   "armor",
   "back",
@@ -220,7 +239,7 @@ function buildSlotOptions(selectedSlot = "") {
     {value: "", label: "None", selected: !selectedSlot},
     ...SLOT_ORDER.map(slot => ({
       value: slot,
-      label: slot,
+      label: SLOT_LABELS[slot] ?? slot,
       selected: selectedSlot === slot
     }))
   ];
@@ -311,6 +330,7 @@ export class SS13ActorSheet extends ActorSheet {
     const equippedItemIds = getEquippedItemIds(slotData);
     context.inventorySlots = SLOT_ORDER.filter(key => key in slotData).map(key => ({
       key,
+      label: SLOT_LABELS[key] ?? key,
       itemId: slotData[key],
       item: this.actor.items.get(slotData[key]) ?? null,
       icon: SLOT_ICONS[key] || "systems/ss13/icons/slots/id.png"

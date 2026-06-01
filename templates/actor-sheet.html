@@ -66,8 +66,9 @@
           {{#each inventorySlots as |slot|}}
           <div class="slot-card {{slot.key}}">
             <img class="slot-icon" src="{{slot.icon}}" alt="{{slot.key}}"/>
-            <label>{{slot.key}}</label>
+            <label>{{slot.label}}</label>
             {{#if slot.item}}
+            <img class="equipped-item-image open-item" src="{{slot.item.img}}" alt="{{slot.item.name}}" data-item-id="{{slot.item.id}}"/>
             <button type="button" class="slot-item open-item" data-item-id="{{slot.item.id}}">{{slot.item.name}}</button>
             <button type="button" class="unequip-slot" data-slot="{{slot.key}}">Unequip</button>
             {{else}}

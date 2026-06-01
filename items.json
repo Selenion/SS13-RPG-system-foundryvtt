@@ -605,7 +605,7 @@
       "system": {
         "type": "scanner",
         "skill": "engineering",
-        "slot": "left_pocket"
+        "slot": "eyes"
       }
     },
     {
@@ -724,7 +724,7 @@
       "system": {
         "type": "scanner",
         "skill": "medical",
-        "slot": "left_pocket"
+        "slot": "eyes"
       }
     },
     {
@@ -799,7 +799,7 @@
       "system": {
         "type": "scanner",
         "skill": "intimidate",
-        "slot": "left_pocket"
+        "slot": "eyes"
       }
     },
     {
@@ -837,7 +837,7 @@
       "system": {
         "type": "scanner",
         "skill": "science",
-        "slot": "left_pocket"
+        "slot": "eyes"
       }
     },
     {

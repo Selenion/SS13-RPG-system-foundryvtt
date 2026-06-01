@@ -9,6 +9,7 @@ const EQUIPMENT_SLOTS = [
   "back",
   "id",
   "ears",
+  "eyes",
   "left_pocket",
   "right_pocket",
   "left_hand",
@@ -16,6 +17,23 @@ const EQUIPMENT_SLOTS = [
   "shoes",
   "hands"
 ];
+
+const SLOT_LABELS = {
+  uniform: "Uniform",
+  armor: "Armor",
+  head: "Head",
+  belt: "Belt",
+  back: "Back",
+  id: "ID",
+  ears: "Ears",
+  eyes: "HUD / Glasses",
+  left_pocket: "Left Pocket",
+  right_pocket: "Right Pocket",
+  left_hand: "Left Hand",
+  right_hand: "Right Hand",
+  shoes: "Shoes",
+  hands: "Gloves"
+};
 
 const SKILL_OPTIONS = [
   "melee",
@@ -90,7 +108,7 @@ export class SS13ItemSheet extends ItemSheet {
     }));
     data.slotOptions = EQUIPMENT_SLOTS.map(slot => ({
       value: slot,
-      label: slot,
+      label: SLOT_LABELS[slot] ?? slot,
       selected: this.item.system.slot === slot
     }));
     data.skillOptions = [

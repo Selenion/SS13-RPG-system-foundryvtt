@@ -57,7 +57,7 @@ const DEFAULT_ACTOR_DATA = {
     inventory: {
       slots: {
         uniform: "", armor: "", head: "", belt: "", back: "",
-        id: "", ears: "", left_pocket: "", right_pocket: "",
+        id: "", ears: "", eyes: "", left_pocket: "", right_pocket: "",
         left_hand: "", right_hand: "", shoes: "", hands: ""
       },
       protection: {
@@ -116,7 +116,7 @@ const DEFAULT_ACTOR_DATA = {
     inventory: {
       slots: {
         uniform: "", armor: "", head: "", belt: "", back: "",
-        id: "", ears: "", left_pocket: "", right_pocket: "",
+        id: "", ears: "", eyes: "", left_pocket: "", right_pocket: "",
         left_hand: "", right_hand: "", shoes: "", hands: ""
       },
       protection: {
@@ -274,12 +274,6 @@ class SS13ImportItemsConfig extends FormApplication {
 
   async getData() {
     const sourceItems = await loadBaseItems();
-    const existingSourceIds = new Set(
-      game.items
-        .filter(item => item.getFlag("ss13", "sourceId"))
-        .map(item => item.getFlag("ss13", "sourceId"))
-    );
-    const missingCount = sourceItems.filter(item => !existingSourceIds.has(item.id)).length;
     const pack = getBaseItemsCompendium();
     let compendiumCount = 0;
     if (pack) {
@@ -289,8 +283,6 @@ class SS13ImportItemsConfig extends FormApplication {
     }
     return {
       totalCount: sourceItems.length,
-      importedCount: sourceItems.length - missingCount,
-      missingCount,
       compendiumName: pack?.metadata?.label ?? BASE_ITEMS_PACK_LABEL,
       compendiumCount,
       compendiumMissingCount: sourceItems.length - compendiumCount
@@ -299,16 +291,6 @@ class SS13ImportItemsConfig extends FormApplication {
 
   activateListeners(html) {
     super.activateListeners(html);
-    html.find("[data-action='import']").click(async ev => {
-      ev.preventDefault();
-      await importBaseItems();
-      this.render();
-    });
-    html.find("[data-action='update']").click(async ev => {
-      ev.preventDefault();
-      await importBaseItems({updateExisting: true});
-      this.render();
-    });
     html.find("[data-action='sync-compendium']").click(async ev => {
       ev.preventDefault();
       await syncBaseItemsCompendium({updateExisting: true});
